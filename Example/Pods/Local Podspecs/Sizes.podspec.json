@@ -1,22 +1,26 @@
 {
   "name": "Sizes",
   "version": "0.1.0",
-  "summary": "A short description of Sizes.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/git/Sizes",
+  "summary": "View your app on different device and font sizes.",
+  "description": "Sizes lets you view your app on different device and font sizes.",
+  "homepage": "https://github.com/marcosgriselli/Sizes",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
-  "authors": {
-    "git": "marcosgriselli@gmail.com"
-  },
+  "authors": "Marcos Griselli",
   "source": {
-    "git": "https://github.com/git/Sizes.git",
+    "git": "https://github.com/marcosgriselli/Sizes.git",
     "tag": "0.1.0"
   },
+  "social_media_url": "https://twitter.com/marcosgriselli",
   "platforms": {
-    "ios": "8.0"
+    "ios": "10.0"
   },
-  "source_files": "Sizes/Classes/**/*"
+  "source_files": "Sizes/Classes/**/*",
+  "resource_bundles": {
+    "Sizes": [
+      "Sizes/Assets/*"
+    ]
+  }
 }
