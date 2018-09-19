@@ -1,0 +1,16 @@
+PODS:
+  - Sizes (0.1.0)
+
+DEPENDENCIES:
+  - Sizes (from `../`)
+
+EXTERNAL SOURCES:
+  Sizes:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Sizes: 368786329b93645bfb830ccd05754700b5ee9a44
+
+PODFILE CHECKSUM: 10dbb570249287c09b8fd6b2335371f76eedd08e
+
+COCOAPODS: 1.5.3

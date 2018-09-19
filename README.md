@@ -1,29 +1,108 @@
 # Sizes
 
-[![CI Status](https://img.shields.io/travis/git/Sizes.svg?style=flat)](https://travis-ci.org/git/Sizes)
-[![Version](https://img.shields.io/cocoapods/v/Sizes.svg?style=flat)](https://cocoapods.org/pods/Sizes)
-[![License](https://img.shields.io/cocoapods/l/Sizes.svg?style=flat)](https://cocoapods.org/pods/Sizes)
-[![Platform](https://img.shields.io/cocoapods/p/Sizes.svg?style=flat)](https://cocoapods.org/pods/Sizes)
+<p align="center">
+    <img src="https://img.shields.io/badge/Swift-4.1-orange.svg" />
+        <img src="https://img.shields.io/badge/Platforms-iOS-blue.svg?style=flat" />
+    <a href="https://cocoapods.org/pods/Sizes
+">
+        <img src="https://img.shields.io/cocoapods/v/Sizes
+    .svg" alt="CocoaPods" />
+    </a>
+    <a href="https://github.com/Carthage/Carthage">
+        <img src="https://img.shields.io/badge/carthage-compatible-4BC51D.svg?style=flat" alt="Carthage" />
+    </a>
+    <a href="https://opensource.org/licenses/MIT">
+      <img src="https://img.shields.io/cocoapods/l/Sizes
+    .svg?style=flat" alt="License" />
+    </a>
+</p>
 
-## Example
+* [Features](#-features)
+* [Example Project](#-example)
+* [Installation](#-installation)
+  * [Cocoapods](#using-cocoapods)
+  * [Carthage](#using-carthage)
+* [How to use](#-how-to-use)
+  * [Collections](#-collections)
+* [Documentation](#-documentation)
+* [Roadmap](#-next-steps)
+* [Contributing](#-contributing)
+* [Author](#-author)
+* [License](#-license)
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+## 🌟 Features
 
-## Requirements
+- [x] Inspect your app in multiple device sizes
+- [x] Test multiple font sizes
+- [x] Universal (iPhone & iPad)
+- [x] Interface Builder friendly
 
-## Installation
+### 💡 Example
 
-Sizes is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+To run the example project, clone the repo and run `Sizes` target.
+
+## 📲 Installation
+
+#### Using [CocoaPods](https://cocoapods.org)
+
+Edit your `Podfile` and specify the dependency:
 
 ```ruby
 pod 'Sizes'
 ```
 
-## Author
+#### Using [Carthage](https://github.com/carthage)
 
-git, marcosgriselli@gmail.com
+Edit your `Cartfile` and specify the dependency:
 
-## License
+```bash
+github 'marcosgriselli/Sizes'
+```
 
-Sizes is available under the MIT license. See the LICENSE file for more info.
+## 👩‍💻 How to use
+
+## 🛣 Roadmap
+
+* [ ] Scale size aspect to fit on smaller devices
+* [ ] Workaround for extended top and bottom bars on iPhone X
+
+## ❤️ Contributing
+This is an open source project, so feel free to contribute. How?
+- Open an [issue](https://github.com/marcosgriselli/Sizes/issues/new).
+- Send feedback via [twitter](https://twitter.com/marcosgriselli).
+- Propose your own fixes, suggestions and open a pull request with the changes.
+
+See [all contributors](https://github.com/marcosgriselli/Sizes/graphs/contributors)
+
+## 👨‍💻 Author
+Marcos Griselli | <a href="url"><img src="https://cdn.rawgit.com/marcosgriselli/ViewAnimator/cf065e96/Resources/twitterLogo.svg" height="17"></a> [@marcosgriselli](https://twitter.com/marcosgriselli)
+
+[![Twitter Follow](https://img.shields.io/twitter/follow/marcosgriselli.svg?style=social)](https://twitter.com/marcosgriselli)
+
+[![Twitter Follow](https://img.shields.io/github/followers/marcosgriselli.svg?style=social&label=Follow)](https://github.com/marcosgriselli)
+
+## 🛡 License
+
+```
+MIT License
+
+Copyright (c) 2018 Marcos Griselli
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
