@@ -1,21 +1,10 @@
-# Sizes
+<img width="400" src="./Assets/sizes.svg"/>
 
-<p align="center">
-    <img src="https://img.shields.io/badge/Swift-4.1-orange.svg" />
-        <img src="https://img.shields.io/badge/Platforms-iOS-blue.svg?style=flat" />
-    <a href="https://cocoapods.org/pods/Sizes
-">
-        <img src="https://img.shields.io/cocoapods/v/Sizes
-    .svg" alt="CocoaPods" />
-    </a>
-    <a href="https://github.com/Carthage/Carthage">
-        <img src="https://img.shields.io/badge/carthage-compatible-4BC51D.svg?style=flat" alt="Carthage" />
-    </a>
-    <a href="https://opensource.org/licenses/MIT">
-      <img src="https://img.shields.io/cocoapods/l/Sizes
-    .svg?style=flat" alt="License" />
-    </a>
-</p>
+![Version](https://img.shields.io/cocoapods/v/Sizes.svg)
+![Swift 4.1](https://img.shields.io/badge/Swift-4.1-orange.svg)
+![iOS 10.0+](https://img.shields.io/badge/Platforms-iOS-blue.svg?style=flat)
+![Cartage](https://img.shields.io/badge/carthage-compatible-4BC51D.svg?style=flat)
+![License](https://img.shields.io/cocoapods/l/Sizes.svg?style=flat)
 
 * [Features](#-features)
 * [Example Project](#-example)

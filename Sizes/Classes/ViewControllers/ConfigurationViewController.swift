@@ -20,7 +20,7 @@ internal class ConfigurationViewController: UIViewController {
         }
     }
     
-    private var selectedDevice: Device = .pad {
+    private var selectedDevice: Device = .default {
         didSet {
             update?(selectedOrientation, selectedDevice, selectedTextSize)
         }

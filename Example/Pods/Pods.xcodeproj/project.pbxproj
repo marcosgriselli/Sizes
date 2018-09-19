@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0154193519AE708C9700FEED6B42CF5A /* AutoLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC6C8DE5C6DE97E8251E3C0D19F730 /* AutoLayoutHelper.swift */; };
 		04DEDAE72568ACE1F32E539D8667D4AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		1DF77CF430A7392D529410892028FDDA /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CFFA22EA85DB3ED34DF799B436BDAC /* Orientation.swift */; };
+		1513B8C136923F836CCB27E2C242C1BF /* AutoLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC6C8DE5C6DE97E8251E3C0D19F730 /* AutoLayoutHelper.swift */; };
 		24BCA5BC651273088498371E85E35CE6 /* Sizes-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B06308C6E47B8A36951FEF2F687A3F /* Sizes-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2640D1668CC3D0BA9E270CFD33A93C17 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715F1550E3224DA03CF11231FA5B72D8 /* Device.swift */; };
-		351F4DC6BFECFE979D3C417F74D925BB /* Sizes-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B6ECC3610DD2883D8C820957F12923 /* Sizes-dummy.m */; };
+		321B6B1CE2335A2A3CD0F7F785DDA538 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3473C697DA9C24FBBFB255B86232AF2 /* Colors.swift */; };
 		3AFDE0F591830BD7EE756ECB840E2164 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		653713389137F31FCD718FA274AE81A3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3473C697DA9C24FBBFB255B86232AF2 /* Colors.swift */; };
+		45055DEED58B8F498ED72CD1A8B5312E /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715F1550E3224DA03CF11231FA5B72D8 /* Device.swift */; };
 		65DA48EA620F145052085D659AD90A0F /* Pods-Sizes_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DB98984468ED0D329A041618AC4171E0 /* Pods-Sizes_Tests-dummy.m */; };
 		725297DC00C531B210CE257EE909DA4D /* Pods-Sizes_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CBB0A69C4D39E9FC1C812CE97F6CC02 /* Pods-Sizes_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8C3CB0999CB8CD60C9F14A0EF6D1774F /* SizesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC6BC94750744C3E6AAD1968D5C64DF /* SizesViewController.swift */; };
+		97178FF1D432FA1D5AFE25C96B9C45B6 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CFFA22EA85DB3ED34DF799B436BDAC /* Orientation.swift */; };
 		98F94F76C92B051C0D619E784FFEE4F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		A562138D06DC81663DD54D2B2A8E3707 /* Designable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2026E017F4FD075AB5262FB8E4446D32 /* Designable.swift */; };
+		9AB5651D1385228923D85049D1E46714 /* Designable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2026E017F4FD075AB5262FB8E4446D32 /* Designable.swift */; };
+		9B81510397A277B2E8586A88F7C7F627 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EBE298F6837D90A9B0A8BC614C0921 /* ConfigurationViewController.swift */; };
 		B0BD5679757882D60EE6E8947EC91E34 /* Sizes.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6877E4999F83F61DC4E9F41EE29C312A /* Sizes.bundle */; };
-		B784EDD361491011CE6FCE45B909EC1D /* ConfigurationViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = A9C7B403509588A889B58DE7C678BDE7 /* ConfigurationViewController.xib */; };
+		B70962BB6BA22647252E817A799E10F0 /* ConfigurationViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = A805EE86B23A112FCFF67DC09E029B6C /* ConfigurationViewController.xib */; };
 		BBE04C15BE124189BD4D754E8C3F0F4B /* Pods-Sizes_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBC1A1F3AA2F692F1AF0D2A5B59F04 /* Pods-Sizes_Example-dummy.m */; };
-		BFECF9381D2F79E83EB0C1899F465356 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B152C59A9EF6BB1FC9093B89F10BF2F3 /* ConfigurationViewController.swift */; };
+		D7B6601E99491EAE9E835DEB769B610F /* Sizes-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B6ECC3610DD2883D8C820957F12923 /* Sizes-dummy.m */; };
+		DC03C4B08F00A28C185E679A6149250B /* SizesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC1F9949A7383F5F129C66F15FA30E7 /* SizesViewController.swift */; };
 		FEF68856C282F1FA8456BE99781782B7 /* Pods-Sizes_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6D52097B6DD4A008EAF20975BA5A05 /* Pods-Sizes_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -54,7 +54,7 @@
 /* Begin PBXFileReference section */
 		01D9101435963EA709F47419674B2E06 /* Pods-Sizes_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sizes_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		03C881F6FBE904195661EA1C6A4C82AB /* Sizes.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Sizes.xcconfig; sourceTree = "<group>"; };
-		1747BD5F25607F8C39B3D4ACB7535747 /* Sizes.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = Sizes.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1747BD5F25607F8C39B3D4ACB7535747 /* Sizes.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = Sizes.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2026E017F4FD075AB5262FB8E4446D32 /* Designable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Designable.swift; sourceTree = "<group>"; };
 		20FBC1A1F3AA2F692F1AF0D2A5B59F04 /* Pods-Sizes_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Sizes_Example-dummy.m"; sourceTree = "<group>"; };
 		22B6C836AD84E7978AAC18BE3B2EF944 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,27 +62,27 @@
 		2F6D52097B6DD4A008EAF20975BA5A05 /* Pods-Sizes_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Sizes_Tests-umbrella.h"; sourceTree = "<group>"; };
 		41AC6C8DE5C6DE97E8251E3C0D19F730 /* AutoLayoutHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AutoLayoutHelper.swift; sourceTree = "<group>"; };
 		479695B2521C9E7D79F3B19FD4298EE9 /* Pods-Sizes_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Sizes_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4842448587B0C2F2C03EB9EFD7F07816 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4842448587B0C2F2C03EB9EFD7F07816 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		4931FDC718983B1CF899ACCE519E5098 /* Sizes.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Sizes.modulemap; sourceTree = "<group>"; };
 		4963858564006266D3E14D0A3FDD308F /* Pods-Sizes_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sizes_Example.release.xcconfig"; sourceTree = "<group>"; };
 		57F223FAA8D8C5477C19B81BC3BE1D2A /* Pods-Sizes_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Sizes_Example.modulemap"; sourceTree = "<group>"; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5CBB0A69C4D39E9FC1C812CE97F6CC02 /* Pods-Sizes_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Sizes_Example-umbrella.h"; sourceTree = "<group>"; };
-		6877E4999F83F61DC4E9F41EE29C312A /* Sizes.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sizes.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		6877E4999F83F61DC4E9F41EE29C312A /* Sizes.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Sizes.bundle; path = "Sizes-Sizes.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AEB1C101487CB9765A164A480496EAC /* Pods-Sizes_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sizes_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		6BC1F9949A7383F5F129C66F15FA30E7 /* SizesViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SizesViewController.swift; sourceTree = "<group>"; };
 		715F1550E3224DA03CF11231FA5B72D8 /* Device.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		7702DE368125053549CB4465480C03C7 /* Sizes-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Sizes-prefix.pch"; sourceTree = "<group>"; };
 		79E225EC17A90998BF8D2E5C46554427 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7CF5109BC79CC15EFD1A067DC91AB8D4 /* Pods_Sizes_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sizes_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CF5109BC79CC15EFD1A067DC91AB8D4 /* Pods_Sizes_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Sizes_Tests.framework; path = "Pods-Sizes_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F9685172458884C1EA8AC5A51F8AA8 /* Pods-Sizes_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Sizes_Example-frameworks.sh"; sourceTree = "<group>"; };
-		8689AAE896442C181976B38A494E495A /* Pods_Sizes_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sizes_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9E359CFECB036F16B44FA8B15555662A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		8689AAE896442C181976B38A494E495A /* Pods_Sizes_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Sizes_Example.framework; path = "Pods-Sizes_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E359CFECB036F16B44FA8B15555662A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		A30847083E7E4A6170445CF7E75B47F0 /* Pods-Sizes_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Sizes_Example-resources.sh"; sourceTree = "<group>"; };
-		A9C7B403509588A889B58DE7C678BDE7 /* ConfigurationViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = ConfigurationViewController.xib; sourceTree = "<group>"; };
+		A805EE86B23A112FCFF67DC09E029B6C /* ConfigurationViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = ConfigurationViewController.xib; sourceTree = "<group>"; };
 		AD21CE51EF4F8A4831C404A27637BBEE /* Pods-Sizes_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Sizes_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		AD61814CDD50057C30101836F5A9B270 /* Pods-Sizes_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Sizes_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		B152C59A9EF6BB1FC9093B89F10BF2F3 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		B31BB315B3B896CF8D9F9E28638618AD /* Pods-Sizes_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Sizes_Tests.modulemap"; sourceTree = "<group>"; };
 		C0CFFA22EA85DB3ED34DF799B436BDAC /* Orientation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		C219BF60F93E86A9F31EC916D2AB3B61 /* Pods-Sizes_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Sizes_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -94,8 +94,8 @@
 		EBF73866576C02C2764221FB357BA882 /* Pods-Sizes_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Sizes_Tests-resources.sh"; sourceTree = "<group>"; };
 		F4B06308C6E47B8A36951FEF2F687A3F /* Sizes-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Sizes-umbrella.h"; sourceTree = "<group>"; };
 		F5B6ECC3610DD2883D8C820957F12923 /* Sizes-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Sizes-dummy.m"; sourceTree = "<group>"; };
-		FD9B4C95EED72F6423B8BE2669C93725 /* Sizes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sizes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FDC6BC94750744C3E6AAD1968D5C64DF /* SizesViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SizesViewController.swift; sourceTree = "<group>"; };
+		F6EBE298F6837D90A9B0A8BC614C0921 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
+		FD9B4C95EED72F6423B8BE2669C93725 /* Sizes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Sizes.framework; path = Sizes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +162,17 @@
 			path = "Target Support Files/Pods-Sizes_Example";
 			sourceTree = "<group>";
 		};
+		29B280A26972ED0E3B81073B72BFF55D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F6EBE298F6837D90A9B0A8BC614C0921 /* ConfigurationViewController.swift */,
+				A805EE86B23A112FCFF67DC09E029B6C /* ConfigurationViewController.xib */,
+				6BC1F9949A7383F5F129C66F15FA30E7 /* SizesViewController.swift */,
+			);
+			name = ViewControllers;
+			path = Sizes/Classes/ViewControllers;
+			sourceTree = "<group>";
+		};
 		3A6DF39EF26E65F4F5B38FF6E4C7AD87 /* Pods-Sizes_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,7 +198,7 @@
 				669A845DDEB6057CAB2E5F7C716D3598 /* Pod */,
 				973F539C362207CF7D5D6737E2C7BF68 /* Support Files */,
 				67ADAEF014A66F665111637026DB30E6 /* Util */,
-				BC8C39B84B08AF29C7DA817F84F69B3B /* ViewControllers */,
+				29B280A26972ED0E3B81073B72BFF55D /* ViewControllers */,
 			);
 			name = Sizes;
 			path = ../..;
@@ -283,17 +294,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BC8C39B84B08AF29C7DA817F84F69B3B /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				B152C59A9EF6BB1FC9093B89F10BF2F3 /* ConfigurationViewController.swift */,
-				A9C7B403509588A889B58DE7C678BDE7 /* ConfigurationViewController.xib */,
-				FDC6BC94750744C3E6AAD1968D5C64DF /* SizesViewController.swift */,
-			);
-			name = ViewControllers;
-			path = Sizes/Classes/ViewControllers;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -348,7 +348,7 @@
 			buildConfigurationList = E7D31AC5A0E6CE19266BAB1F7C2D61A4 /* Build configuration list for PBXNativeTarget "Sizes" */;
 			buildPhases = (
 				C87C695D74E9869100919C076E8501C2 /* Headers */,
-				38325CC1C67691C66575B3A06BBC4F02 /* Sources */,
+				2E779D2C5582EAF3CC4237132EC36790 /* Sources */,
 				5566C1B859C6CE6CDF12D6D81F223357 /* Frameworks */,
 				B086A385D538688D902AD816FE5927B9 /* Resources */,
 			);
@@ -460,19 +460,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		38325CC1C67691C66575B3A06BBC4F02 /* Sources */ = {
+		2E779D2C5582EAF3CC4237132EC36790 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0154193519AE708C9700FEED6B42CF5A /* AutoLayoutHelper.swift in Sources */,
-				653713389137F31FCD718FA274AE81A3 /* Colors.swift in Sources */,
-				BFECF9381D2F79E83EB0C1899F465356 /* ConfigurationViewController.swift in Sources */,
-				B784EDD361491011CE6FCE45B909EC1D /* ConfigurationViewController.xib in Sources */,
-				A562138D06DC81663DD54D2B2A8E3707 /* Designable.swift in Sources */,
-				2640D1668CC3D0BA9E270CFD33A93C17 /* Device.swift in Sources */,
-				1DF77CF430A7392D529410892028FDDA /* Orientation.swift in Sources */,
-				8C3CB0999CB8CD60C9F14A0EF6D1774F /* SizesViewController.swift in Sources */,
-				351F4DC6BFECFE979D3C417F74D925BB /* Sizes-dummy.m in Sources */,
+				1513B8C136923F836CCB27E2C242C1BF /* AutoLayoutHelper.swift in Sources */,
+				321B6B1CE2335A2A3CD0F7F785DDA538 /* Colors.swift in Sources */,
+				9B81510397A277B2E8586A88F7C7F627 /* ConfigurationViewController.swift in Sources */,
+				B70962BB6BA22647252E817A799E10F0 /* ConfigurationViewController.xib in Sources */,
+				9AB5651D1385228923D85049D1E46714 /* Designable.swift in Sources */,
+				45055DEED58B8F498ED72CD1A8B5312E /* Device.swift in Sources */,
+				97178FF1D432FA1D5AFE25C96B9C45B6 /* Orientation.swift in Sources */,
+				D7B6601E99491EAE9E835DEB769B610F /* Sizes-dummy.m in Sources */,
+				DC03C4B08F00A28C185E679A6149250B /* SizesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,7 +551,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -651,7 +652,8 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

@@ -29,11 +29,10 @@ open class SizesViewController: UIViewController {
         configView.layer.shadowRadius = 4
         configView.layer.shadowOffset = CGSize(width: 0, height: -2)
         view.addSubview(configView)
-        configurationBottomConstraint = configView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 310)
+        configurationBottomConstraint = configView.topAnchor.constraint(equalTo: view.bottomAnchor)
         NSLayoutConstraint.activate([
             configView.leftAnchor.constraint(equalTo: view.leftAnchor),
             configView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            configView.heightAnchor.constraint(equalToConstant: 310),
             configurationBottomConstraint!
             ])
         configurationController.didMove(toParentViewController: self)
@@ -42,7 +41,9 @@ open class SizesViewController: UIViewController {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [unowned self] in
-            self.configurationBottomConstraint?.constant = 0
+            self.configurationBottomConstraint?.isActive = false
+            self.configurationBottomConstraint = configView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+            self.configurationBottomConstraint?.isActive = true
             self.view.setNeedsLayout()
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.75, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
                 self.view.layoutIfNeeded()
@@ -65,8 +66,17 @@ open class SizesViewController: UIViewController {
         let traits: UITraitCollection
         switch (device, orientation) {
         case (.default, .portrait):
-            deviceSize = CGSize(width: view.bounds.width, height: view.bounds.height)
+            deviceSize = .zero
+            resetSizeConstraints()
             traits = .init()
+            
+            
+            let allTraits = UITraitCollection.init(traitsFrom: [traits, UITraitCollection(preferredContentSizeCategory: contentSize)])
+            setOverrideTraitCollection(allTraits, forChildViewController: containedViewController)
+            containedViewController.view.setNeedsLayout()
+            containedViewController.view.layoutIfNeeded()
+            return
+            
         case (.default, .landscape):
             deviceSize = CGSize(width: view.bounds.height, height: view.bounds.width)
             traits = .init()
@@ -174,15 +184,10 @@ open class SizesViewController: UIViewController {
         containedView.removeConstraints(currentConstraints)
         currentConstraints = containedView.constraintTo(size: deviceSize)
         
-        if #available(iOS 10.0, *) {
-            let allTraits = UITraitCollection.init(traitsFrom: [traits, UITraitCollection(preferredContentSizeCategory: contentSize)])
-            setOverrideTraitCollection(allTraits, forChildViewController: containedViewController)
-            containedViewController.view.setNeedsLayout()
-            containedViewController.view.layoutIfNeeded()
-//            UIView.animate(withDuration: 0.5) {
-//                
-//            }
-        }
+        let allTraits = UITraitCollection.init(traitsFrom: [traits, UITraitCollection(preferredContentSizeCategory: contentSize)])
+        setOverrideTraitCollection(allTraits, forChildViewController: containedViewController)
+        containedViewController.view.setNeedsLayout()
+        containedViewController.view.layoutIfNeeded()
     }
     
     
@@ -196,6 +201,22 @@ open class SizesViewController: UIViewController {
         containedView.centerInSuperview()
         resetSizeConstraints()
         containedController = viewController
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+//            /// TODO: - Test
+//            /// generate screenshots
+//            print(getDocumentsDirectory())
+//            for device in Device.allCases {
+//                self.debug(device: device, orientation: .portrait, contentSize: .large)
+//                let image = UIImage.from(view: self.containedView)
+//                if let data = UIImageJPEGRepresentation(image, 0.8) {
+//                    let filename = getDocumentsDirectory().appendingPathComponent("\(device).png")
+//                    try? data.write(to: filename)
+//                }
+//            }
+//
+//            self.debug(device: .default, orientation: .portrait, contentSize: .large)
+//        }
         
         // TODO: - Remove
         let panGesture = UIPanGestureRecognizer()
@@ -212,5 +233,20 @@ open class SizesViewController: UIViewController {
             containedView.heightAnchor.constraint(equalTo: view.heightAnchor)
         ]
         NSLayoutConstraint.activate(currentConstraints)
+    }
+}
+
+func getDocumentsDirectory() -> URL {
+    let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+    return paths[0]
+}
+
+extension UIImage {
+    static func from(view: UIView) -> UIImage {
+        let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
+        let capturedImage = renderer.image { _ in
+            view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+        }
+        return capturedImage
     }
 }
