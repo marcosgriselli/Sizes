@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Sizes_Example' do
+  pod 'Sizes', :path => '../'
+
+  target 'Sizes_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
