@@ -1,4 +1,4 @@
-<img width="400" src="./Assets/sizes.svg"/>
+<img width="65%" style="margin: 0 0 0 -20px" src="./Assets/sizes.svg"/>
 
 ![Version](https://img.shields.io/cocoapods/v/Sizes.svg)
 ![Swift 4.1](https://img.shields.io/badge/Swift-4.1-orange.svg)
