@@ -6,18 +6,7 @@
 ![Cartage](https://img.shields.io/badge/carthage-compatible-4BC51D.svg?style=flat)
 ![License](https://img.shields.io/cocoapods/l/Sizes.svg?style=flat)
 
-* [Features](#-features)
-* [Example Project](#-example)
-* [Installation](#-installation)
-  * [Cocoapods](#using-cocoapods)
-  * [Carthage](#using-carthage)
-* [How to use](#-how-to-use)
-  * [Collections](#-collections)
-* [Documentation](#-documentation)
-* [Roadmap](#-next-steps)
-* [Contributing](#-contributing)
-* [Author](#-author)
-* [License](#-license)
+<img src="./Assets/collectionX.svg"/>
 
 ## 🌟 Features
 
