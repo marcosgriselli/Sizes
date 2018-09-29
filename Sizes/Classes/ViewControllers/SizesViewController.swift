@@ -70,7 +70,7 @@ open class SizesViewController: UIViewController {
             resetSizeConstraints()
             traits = .init()
             
-            
+
             let allTraits = UITraitCollection.init(traitsFrom: [traits, UITraitCollection(preferredContentSizeCategory: contentSize)])
             setOverrideTraitCollection(allTraits, forChildViewController: containedViewController)
             containedViewController.view.setNeedsLayout()

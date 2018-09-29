@@ -1,6 +1,6 @@
 //
 //  UIViewController + SafeArea.swift
-//  DynamicAppResizer_Example
+//  Sizes
 //
 //  Created by Marcos Griselli on 31/08/2018.
 //  Copyright © 2018 CocoaPods. All rights reserved.

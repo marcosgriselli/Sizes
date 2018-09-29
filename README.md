@@ -6,14 +6,14 @@
 ![Cartage](https://img.shields.io/badge/carthage-compatible-4BC51D.svg?style=flat)
 ![License](https://img.shields.io/cocoapods/l/Sizes.svg?style=flat)
 
-<img src="./Assets/collectionX.svg"/>
+<img src="./Assets/sizes_short.gif"/>
 
 ## 🌟 Features
 
 - [x] Inspect your app in multiple device sizes
-- [x] Test multiple font sizes
+- [x] Switch orientations
+- [x] Test all font sizes
 - [x] Universal (iPhone & iPad)
-- [x] Interface Builder friendly
 
 ### 💡 Example
 
@@ -57,7 +57,7 @@ Marcos Griselli | <a href="url"><img src="https://cdn.rawgit.com/marcosgriselli/
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/marcosgriselli.svg?style=social)](https://twitter.com/marcosgriselli)
 
-[![Twitter Follow](https://img.shields.io/github/followers/marcosgriselli.svg?style=social&label=Follow)](https://github.com/marcosgriselli)
+[![GitHub Follow](https://img.shields.io/github/followers/marcosgriselli.svg?style=social&label=Follow)](https://github.com/marcosgriselli)
 
 ## 🛡 License
 
