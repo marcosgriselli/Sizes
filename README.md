@@ -6,6 +6,9 @@
 ![Cartage](https://img.shields.io/badge/carthage-compatible-4BC51D.svg?style=flat)
 ![License](https://img.shields.io/cocoapods/l/Sizes.svg?style=flat)
 
+Sizes reduces the time it takes to evaluate all of our apps possible device sizes, orientations and font combinations. With Sizes we'll avoid launching all the supported devices simulator, running our app and navigating through each screen manually which not only takes a lot of time but its also highly error prone since we sometimes forget to test one particular combination and we ship a screen with a layout bug to the App Store.
+
+## 📱 Example 
 <img src="./Assets/sizes_short.gif"/>
 
 ## 🌟 Features
@@ -15,9 +18,9 @@
 - [x] Test all font sizes
 - [x] Universal (iPhone & iPad)
 
-### 💡 Example
+### 💡 Demo
 
-To run the example project, clone the repo and run `Sizes` target.
+To run the demo project, clone the repo and run `Sizes` target.
 
 ## 📲 Installation
 
