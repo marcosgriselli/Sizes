@@ -7,14 +7,6 @@
 
 import UIKit
 
-internal extension UIViewController {
-
-    var supportsRotation: Bool {
-        return supportedInterfaceOrientations.contains(.landscape)
-            && supportedInterfaceOrientations.contains(.portrait)
-    }
-}
-
 internal class ConfigurationViewController: UIViewController {
     
     @IBOutlet weak var orientationSection: UIView!
@@ -23,13 +15,14 @@ internal class ConfigurationViewController: UIViewController {
     @IBOutlet weak var deviceStackView: UIStackView!
     @IBOutlet weak var textSizeLabel: UILabel!
     
+    /// TODO: - Set default correctly.
     private var selectedOrientation: Orientation = .portrait {
         didSet {
             update?(selectedOrientation, selectedDevice, selectedTextSize)
         }
     }
     
-    private var selectedDevice: Device = .phone3_5inch {
+    private var selectedDevice = Device(size: UIScreen.main.bounds.size) ?? .phone4_7inch {
         didSet {
             update?(selectedOrientation, selectedDevice, selectedTextSize)
         }
@@ -41,6 +34,7 @@ internal class ConfigurationViewController: UIViewController {
         }
     }
     
+    /// TODO: - Select available font sizes.
     let textSizes: [UIContentSizeCategory] = [.extraSmall, .small, .medium, .large, .extraLarge, .extraExtraLarge, .extraExtraExtraLarge, .accessibilityMedium, .accessibilityLarge, .accessibilityExtraLarge]
     
     var update: ((Orientation, Device, UIContentSizeCategory) -> Void)?
@@ -56,9 +50,12 @@ internal class ConfigurationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        orientationSection.isHidden = !supportsRotation
+//        orientationSection.isHidden = !supportsRotation
         panGesture.cancelsTouchesInView = false
         panGesture.delegate = self
+
+        /// TODO: - Use a better approach.
+        view.transform = CGAffineTransform(translationX: 0, y: view.bounds.height)
     }
 
     @IBAction func portraitSelected(_ sender: UIButton) {
@@ -105,16 +102,13 @@ internal class ConfigurationViewController: UIViewController {
             view.transform = CGAffineTransform(translationX: 0, y: translation.y)
             }
         case .cancelled, .ended:
+            /// TODO: - Add rubber-banding + force release.
             let percentageComplete = translation.y / view.bounds.height
             let shouldDismiss = percentageComplete > 0.5
             let yMovement = shouldDismiss ? view.bounds.height : 0
             UIView.animate(withDuration: 0.3, animations: {
                 self.view.transform = CGAffineTransform(translationX: 0, y: yMovement)
-            }) { _ in
-                if shouldDismiss {
-                    self.dismiss(animated: false, completion: nil)
-                }
-            }
+            }, completion: nil)
         default: break
         }
     }

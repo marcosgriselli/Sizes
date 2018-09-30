@@ -1,7 +1,7 @@
 <img width="100%" style="margin: 0 0 0 -20px" src="./Assets/sizes.svg"/>
 
 ![Version](https://img.shields.io/cocoapods/v/Sizes.svg)
-![Swift 4.1](https://img.shields.io/badge/Swift-4.1-orange.svg)
+![Swift 4.1](https://img.shields.io/badge/Swift-4.2-orange.svg)
 ![iOS 10.0+](https://img.shields.io/badge/Platforms-iOS-blue.svg?style=flat)
 ![Cartage](https://img.shields.io/badge/carthage-compatible-4BC51D.svg?style=flat)
 ![License](https://img.shields.io/cocoapods/l/Sizes.svg?style=flat)
@@ -79,6 +79,8 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 
 ⚠️ This might not be the ideal solution for all cases since it will require you to set the root view controller manually. Or if you're accessing the apps root view controller from many places this approach will clash with it.
+
+⚠️ I recommend you only use this while on `#DEBUG` mode
 
 I'm open to exploring new solutions to this issue + ways of setting this up on Storyboards.
 

@@ -16,8 +16,15 @@ internal enum Device: CaseIterable {
     case pad
     case pad12_9inch
     
+    internal init?(size: CGSize) {
+        guard let device = Device.allCases.first(where: { $0.size == size }) else {
+            return nil
+        }
+        self = device
+    }
+    
     /// Portrait size
-    var size: CGSize {
+    internal var size: CGSize {
         switch self {
         case .phone3_5inch:
             return CGSize(width: 320, height: 480)

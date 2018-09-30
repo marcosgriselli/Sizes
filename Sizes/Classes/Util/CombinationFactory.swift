@@ -7,9 +7,9 @@
 
 import UIKit
 
-class CombinationFactory: NSObject {
+internal class LayoutFactory: NSObject {
     
-    func configurationFor(device: Device, orientation: Orientation, contentSizeCategory category: UIContentSizeCategory) -> Layout {
+    internal static func configurationFor(device: Device, orientation: Orientation, contentSizeCategory category: UIContentSizeCategory) -> Layout {
         var traits: [UITraitCollection]
         switch (device, orientation) {
         case (.phone3_5inch, .portrait):
@@ -84,7 +84,7 @@ class CombinationFactory: NSObject {
             ]
         }
         
-        let size = orientation == .portrait ? device.size : device.size // Invert it!
+        let size = orientation == .portrait ? device.size : device.size.inverted
         traits.append(.init(userInterfaceIdiom: device.interfaceIdiom))
         traits.append(.init(preferredContentSizeCategory: category))
         return Layout(size: size, traits: .init(traitsFrom: traits))

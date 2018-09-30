@@ -16,6 +16,7 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		C98A470F60561190B231D996 /* Pods_Sizes_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CD9ED3AD462901E10F812A /* Pods_Sizes_Tests.framework */; };
 		FB69EF2C2152808400D3E284 /* UIViewController + SafeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB69EF2B2152808400D3E284 /* UIViewController + SafeArea.swift */; };
+		FB7337502161251F002E29AF /* ReadmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB73374F2161251F002E29AF /* ReadmeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		BAA35FF65E8C54C57D8170D3 /* Sizes.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Sizes.podspec; path = ../Sizes.podspec; sourceTree = "<group>"; };
 		C03D3993D1015065CD903D53 /* Pods-Sizes_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sizes_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sizes_Example/Pods-Sizes_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		FB69EF2B2152808400D3E284 /* UIViewController + SafeArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + SafeArea.swift"; sourceTree = "<group>"; };
+		FB73374F2161251F002E29AF /* ReadmeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadmeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				FB73374F2161251F002E29AF /* ReadmeViewController.swift */,
 				FB69EF2B2152808400D3E284 /* UIViewController + SafeArea.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
@@ -329,6 +332,7 @@
 			files = (
 				FB69EF2C2152808400D3E284 /* UIViewController + SafeArea.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				FB7337502161251F002E29AF /* ReadmeViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

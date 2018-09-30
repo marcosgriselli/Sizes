@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class ViewController: UIViewController {
 
@@ -15,9 +16,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print(supportedInterfaceOrientations)
-        title = "Hello!"
+        navigationItem.title = "Hello!"
         view.backgroundColor = .white
         
         label.font = UIFont.preferredFont(forTextStyle: .headline, compatibleWith: traitCollection)
