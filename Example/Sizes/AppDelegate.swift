@@ -14,20 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let window = UIWindow()
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let root = SizesViewController()
-        let tabBarController = UITabBarController()
         let navigation = UINavigationController(rootViewController: ViewController())
-        if #available(iOS 11.0, *) {
-            navigation.navigationBar.prefersLargeTitles = true
-        }
-        tabBarController.setViewControllers([navigation], animated: false)
-        
         window.rootViewController = root
-        root.contain(viewController: tabBarController)
+        root.contain(viewController: navigation)
         window.makeKeyAndVisible()
-        
         return true
     }
 }

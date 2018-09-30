@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(supportedInterfaceOrientations)
         title = "Hello!"
         view.backgroundColor = .white
         

@@ -20,10 +20,10 @@ open class SizesViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(white: 0.88, alpha: 1.0)
         
-        addChildViewController(configurationController)
+        addChild(configurationController)
         let configView = configurationController.view!
         configView.translatesAutoresizingMaskIntoConstraints = false
-        configView.layer.cornerRadius = 5.0
+        configView.layer.cornerRadius = 12.0
         configView.layer.shadowColor = UIColor.black.cgColor
         configView.layer.shadowOpacity = 0.15
         configView.layer.shadowRadius = 4
@@ -35,7 +35,7 @@ open class SizesViewController: UIViewController {
             configView.rightAnchor.constraint(equalTo: view.rightAnchor),
             configurationBottomConstraint!
             ])
-        configurationController.didMove(toParentViewController: self)
+        configurationController.didMove(toParent: self)
         configurationController.update = { [unowned self] orientation, device, textSize in
             self.debug(device: device, orientation: orientation, contentSize: textSize)
         }
@@ -62,141 +62,25 @@ open class SizesViewController: UIViewController {
         guard let containedViewController = containedController else {
             return
         }
-        let deviceSize: CGSize
-        let traits: UITraitCollection
-        switch (device, orientation) {
-        case (.default, .portrait):
-            deviceSize = .zero
-            resetSizeConstraints()
-            traits = .init()
-            
-
-            let allTraits = UITraitCollection.init(traitsFrom: [traits, UITraitCollection(preferredContentSizeCategory: contentSize)])
-            setOverrideTraitCollection(allTraits, forChildViewController: containedViewController)
-            containedViewController.view.setNeedsLayout()
-            containedViewController.view.layoutIfNeeded()
-            return
-            
-        case (.default, .landscape):
-            deviceSize = CGSize(width: view.bounds.height, height: view.bounds.width)
-            traits = .init()
-        case (.phone3_5inch, .portrait):
-            deviceSize = CGSize(width: 320, height: 480)
-            traits = .init(traitsFrom: [
-                .init(horizontalSizeClass: .compact),
-                .init(verticalSizeClass: .regular),
-                .init(userInterfaceIdiom: .phone)
-                ])
-        case (.phone3_5inch, .landscape):
-            deviceSize = CGSize(width: 480, height: 320)
-            traits = .init(traitsFrom: [
-                .init(horizontalSizeClass: .compact),
-                .init(verticalSizeClass: .compact),
-                .init(userInterfaceIdiom: .phone)
-                ])
-        case (.phone4inch, .portrait):
-            deviceSize = CGSize(width: 320, height: 568)
-            traits = .init(traitsFrom: [
-                .init(horizontalSizeClass: .compact),
-                .init(verticalSizeClass: .regular),
-                .init(userInterfaceIdiom: .phone)
-                ])
-        case (.phone4inch, .landscape):
-            deviceSize = CGSize(width: 568, height: 320)
-            traits = .init(traitsFrom: [
-                .init(horizontalSizeClass: .compact),
-                .init(verticalSizeClass: .compact),
-                .init(userInterfaceIdiom: .phone)
-                ])
-        case (.phone4_7inch, .portrait):
-            deviceSize = CGSize(width: 375, height: 667)
-            traits = .init(traitsFrom: [
-                .init(horizontalSizeClass: .compact),
-                .init(verticalSizeClass: .regular),
-                .init(userInterfaceIdiom: .phone)
-                ])
-        case (.phone4_7inch, .landscape):
-            deviceSize = CGSize(width: 667, height: 375)
-            traits = .init(traitsFrom: [
-                .init(horizontalSizeClass: .compact),
-                .init(verticalSizeClass: .compact),
-                .init(userInterfaceIdiom: .phone)
-                ])
-        case (.phone5_5inch, .portrait):
-            deviceSize = CGSize(width: 414, height: 736)
-            traits = .init(traitsFrom: [
-                .init(horizontalSizeClass: .compact),
-                .init(verticalSizeClass: .regular),
-                .init(userInterfaceIdiom: .phone)
-                ])
-        case (.phone5_5inch, .landscape):
-            deviceSize = CGSize(width: 736, height: 414)
-            traits = .init(traitsFrom: [
-                .init(horizontalSizeClass: .regular),
-                .init(verticalSizeClass: .compact),
-                .init(userInterfaceIdiom: .phone)
-                ])
-        case (.phone5_8inch, .portrait):
-            deviceSize = CGSize(width: 375, height: 812)
-            traits = .init(traitsFrom: [
-                .init(horizontalSizeClass: .compact),
-                .init(verticalSizeClass: .regular),
-                .init(userInterfaceIdiom: .phone)
-                ])
-        case (.phone5_8inch, .landscape):
-            deviceSize = CGSize(width: 812, height: 375)
-            traits = .init(traitsFrom: [
-                .init(horizontalSizeClass: .compact),
-                .init(verticalSizeClass: .compact),
-                .init(userInterfaceIdiom: .phone)
-                ])
-        case (.pad, .portrait):
-            deviceSize = CGSize(width: 768, height: 1024)
-            traits = .init(traitsFrom: [
-                .init(horizontalSizeClass: .regular),
-                .init(verticalSizeClass: .regular),
-                .init(userInterfaceIdiom: .pad)
-                ])
-        case (.pad, .landscape):
-            deviceSize = CGSize(width: 1024, height: 768)
-            traits = .init(traitsFrom: [
-                .init(horizontalSizeClass: .regular),
-                .init(verticalSizeClass: .regular),
-                .init(userInterfaceIdiom: .pad)
-                ])
-        case (.pad12_9inch, .portrait):
-            deviceSize = CGSize(width: 1024, height: 1366)
-            traits = .init(traitsFrom: [
-                .init(horizontalSizeClass: .regular),
-                .init(verticalSizeClass: .regular),
-                .init(userInterfaceIdiom: .pad)
-                ])
-        case (.pad12_9inch, .landscape):
-            deviceSize = CGSize(width: 1366, height: 1024)
-            traits = .init(traitsFrom: [
-                .init(horizontalSizeClass: .regular),
-                .init(verticalSizeClass: .regular),
-                .init(userInterfaceIdiom: .pad)
-                ])
-        }
+        
+        let layout = CombinationFactory().configurationFor(device: device, orientation: orientation, contentSizeCategory: contentSize)
         
         currentConstraints.forEach { $0.isActive = false }
         containedView.removeConstraints(currentConstraints)
-        currentConstraints = containedView.constraintTo(size: deviceSize)
-        
-        let allTraits = UITraitCollection.init(traitsFrom: [traits, UITraitCollection(preferredContentSizeCategory: contentSize)])
-        setOverrideTraitCollection(allTraits, forChildViewController: containedViewController)
+        currentConstraints = containedView.constraintTo(size: layout.size)
+
+        setOverrideTraitCollection(layout.traits, forChild: containedViewController)
         containedViewController.view.setNeedsLayout()
         containedViewController.view.layoutIfNeeded()
     }
     
     
     public func contain(viewController: UIViewController) {
-        addChildViewController(viewController)
+        addChild(viewController)
         let childView = viewController.view!
         containedView = childView
         childView.translatesAutoresizingMaskIntoConstraints = false
-        viewController.didMove(toParentViewController: self)
+        viewController.didMove(toParent: self)
         view.insertSubview(containedView, at: 0)
         containedView.centerInSuperview()
         resetSizeConstraints()

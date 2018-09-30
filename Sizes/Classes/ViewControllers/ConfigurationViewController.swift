@@ -7,8 +7,17 @@
 
 import UIKit
 
+internal extension UIViewController {
+
+    var supportsRotation: Bool {
+        return supportedInterfaceOrientations.contains(.landscape)
+            && supportedInterfaceOrientations.contains(.portrait)
+    }
+}
+
 internal class ConfigurationViewController: UIViewController {
     
+    @IBOutlet weak var orientationSection: UIView!
     @IBOutlet weak var orientationStackView: UIStackView!
     @IBOutlet var panGesture: UIPanGestureRecognizer!
     @IBOutlet weak var deviceStackView: UIStackView!
@@ -20,7 +29,7 @@ internal class ConfigurationViewController: UIViewController {
         }
     }
     
-    private var selectedDevice: Device = .default {
+    private var selectedDevice: Device = .phone3_5inch {
         didSet {
             update?(selectedOrientation, selectedDevice, selectedTextSize)
         }
@@ -47,6 +56,7 @@ internal class ConfigurationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        orientationSection.isHidden = !supportsRotation
         panGesture.cancelsTouchesInView = false
         panGesture.delegate = self
     }

@@ -8,8 +8,11 @@
 
 Sizes reduces the time it takes to evaluate all of our apps possible device sizes, orientations and font combinations. With Sizes we'll avoid launching all the supported devices simulator, running our app and navigating through each screen manually which not only takes a lot of time but its also highly error prone since we sometimes forget to test one particular combination and we ship a screen with a layout bug to the App Store.
 
-## 📱 Example 
+## 📱 Sizes in action
+
 <img src="./Assets/sizes_short.gif"/>
+
+*Recorded on an 10.5 inch iPad Pro*
 
 ## 🌟 Features
 
@@ -42,10 +45,53 @@ github 'marcosgriselli/Sizes'
 
 ## 👩‍💻 How to use
 
+### Preparations
+
+Sizes require you to use [Auto Layout]((https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/)) in order to update the UI correctly with each change.
+
+For font updates you'll need to use [Dynamic Type](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/typography/).
+
+**Programatically:**
+
+```swift 
+let label = UILabel()
+label.font = UIFont.preferredFont(forTextStyle: .headline, compatibleWith: traitCollection)
+label.adjustsFontForContentSizeCategory = true
+```
+
+**IB/Storyboard:**
+
+<img src="./Assets/inspector.png"/>
+
+### Setup
+
+In order to use Sizes you'll need to make your `AppDelegate's` rootViewController an instance of `SizesViewController` and contain the apps first view controller.
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    let root = SizesViewController()
+    let navigation = UINavigationController(rootViewController: ViewController())
+    window.rootViewController = root
+    root.contain(viewController: navigation)
+    window.makeKeyAndVisible()
+    return true
+}
+```
+
+⚠️ This might not be the ideal solution for all cases since it will require you to set the root view controller manually. Or if you're accessing the apps root view controller from many places this approach will clash with it.
+
+I'm open to exploring new solutions to this issue + ways of setting this up on Storyboards.
+
+### Usage
+
+Shake to display the Sizes configuration UI, then tap on one of the orientation/device options to trigger a change. Or update the Text size slider to navigate through the different font sizes, you'll get the font name as you slide. You can check a longer video implementation and some of the use cases of Sizes in [this tweet](https://twitter.com/marcosgriselli/status/1038459645596250114)
+
+<img src="./Assets/example.jpeg"/>
+
+
 ## 🛣 Roadmap
 
-* [ ] Scale size aspect to fit on smaller devices
-* [ ] Workaround for extended top and bottom bars on iPhone X
+You can check the GitHub [Project](https://github.com/marcosgriselli/Sizes/projects/1) or [Issues](https://github.com/marcosgriselli/Sizes/issues) to get an overview of new features, fixes or releases planed. 
 
 ## ❤️ Contributing
 This is an open source project, so feel free to contribute. How?
