@@ -86,7 +86,7 @@ I'm open to exploring new solutions to this issue + ways of setting this up on S
 
 Shake to display the Sizes configuration UI, then tap on one of the orientation/device options to trigger a change. Or update the Text size slider to navigate through the different font sizes, you'll get the font name as you slide. You can check a longer video implementation and some of the use cases of Sizes in [this tweet](https://twitter.com/marcosgriselli/status/1038459645596250114)
 
-<img src="./Assets/example.jpeg"/>
+<img width="200px" src="./Assets/example.jpeg"/>
 
 
 ## 🛣 Roadmap
