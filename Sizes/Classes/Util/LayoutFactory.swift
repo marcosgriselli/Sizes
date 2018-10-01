@@ -1,5 +1,5 @@
 //
-//  CombinationFactory.swift
+//  LayoutFactory.swift
 //  Pods-Sizes_Example
 //
 //  Created by Marcos Griselli on 29/09/2018.
@@ -58,6 +58,16 @@ internal class LayoutFactory: NSObject {
                 .init(verticalSizeClass: .regular)
             ]
         case (.phone5_8inch, .landscape):
+            traits = [
+                .init(horizontalSizeClass: .compact),
+                .init(verticalSizeClass: .compact)
+            ]
+        case (.phone6_5inch, .portrait):
+            traits = [
+                .init(horizontalSizeClass: .compact),
+                .init(verticalSizeClass: .regular)
+            ]
+        case (.phone6_5inch, .landscape):
             traits = [
                 .init(horizontalSizeClass: .compact),
                 .init(verticalSizeClass: .compact)

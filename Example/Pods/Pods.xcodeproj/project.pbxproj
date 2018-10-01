@@ -21,7 +21,7 @@
 		74A09A550E0A6FE35D477ECF1C7874AF /* Designable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF761CCC5215F0A35D4B723D5AE5E691 /* Designable.swift */; };
 		915A0EE7A07D592B34C9AD71EB250047 /* SizesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3631A0DE209DCB7A19112A1200B4DB11 /* SizesViewController.swift */; };
 		98F94F76C92B051C0D619E784FFEE4F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		A2FC501168CFA6AE98AE0A89D18EB3D7 /* CombinationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D20FEA4081925DFC68F46DFD6F844FE /* CombinationFactory.swift */; };
+		A2FC501168CFA6AE98AE0A89D18EB3D7 /* LayoutFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D20FEA4081925DFC68F46DFD6F844FE /* LayoutFactory.swift */; };
 		B0BD5679757882D60EE6E8947EC91E34 /* Sizes.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6877E4999F83F61DC4E9F41EE29C312A /* Sizes.bundle */; };
 		BBE04C15BE124189BD4D754E8C3F0F4B /* Pods-Sizes_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBC1A1F3AA2F692F1AF0D2A5B59F04 /* Pods-Sizes_Example-dummy.m */; };
 		BC92F423BB9C5472B912F15C4EFD9E0F /* Sizes-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB8896C4D28C2B8F5F9189AF5E47CF3 /* Sizes-dummy.m */; };
@@ -65,7 +65,7 @@
 		4734286773197E3001B31DA9981BEC56 /* ConfigurationViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = ConfigurationViewController.xib; sourceTree = "<group>"; };
 		479695B2521C9E7D79F3B19FD4298EE9 /* Pods-Sizes_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Sizes_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		4963858564006266D3E14D0A3FDD308F /* Pods-Sizes_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sizes_Example.release.xcconfig"; sourceTree = "<group>"; };
-		4D20FEA4081925DFC68F46DFD6F844FE /* CombinationFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CombinationFactory.swift; sourceTree = "<group>"; };
+		4D20FEA4081925DFC68F46DFD6F844FE /* LayoutFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LayoutFactory.swift; sourceTree = "<group>"; };
 		57F223FAA8D8C5477C19B81BC3BE1D2A /* Pods-Sizes_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Sizes_Example.modulemap"; sourceTree = "<group>"; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5CBB0A69C4D39E9FC1C812CE97F6CC02 /* Pods-Sizes_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Sizes_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -295,7 +295,7 @@
 			children = (
 				75F57FED7A896634BBAF2F40BF7BFE24 /* AutoLayoutHelper.swift */,
 				A7D5357E2C1E58374914AF255E4981C3 /* Colors.swift */,
-				4D20FEA4081925DFC68F46DFD6F844FE /* CombinationFactory.swift */,
+				4D20FEA4081925DFC68F46DFD6F844FE /* LayoutFactory.swift */,
 				EF761CCC5215F0A35D4B723D5AE5E691 /* Designable.swift */,
 				FB73374D2161180D002E29AF /* CGSize + Invert.swift */,
 			);
@@ -484,7 +484,7 @@
 				FB73374E2161180D002E29AF /* CGSize + Invert.swift in Sources */,
 				05C9403B91DB0950956C969716453393 /* AutoLayoutHelper.swift in Sources */,
 				5AC6A37F64D91D0A885AF9AD2932B49D /* Colors.swift in Sources */,
-				A2FC501168CFA6AE98AE0A89D18EB3D7 /* CombinationFactory.swift in Sources */,
+				A2FC501168CFA6AE98AE0A89D18EB3D7 /* LayoutFactory.swift in Sources */,
 				60F5806FDC40BEC17440D6C7601448DE /* ConfigurationViewController.swift in Sources */,
 				DB271A1577A66DA6E996E2C2DB68357A /* ConfigurationViewController.xib in Sources */,
 				74A09A550E0A6FE35D477ECF1C7874AF /* Designable.swift in Sources */,

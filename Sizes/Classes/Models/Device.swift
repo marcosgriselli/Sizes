@@ -13,6 +13,7 @@ internal enum Device: CaseIterable {
     case phone4_7inch
     case phone5_5inch
     case phone5_8inch
+    case phone6_5inch
     case pad
     case pad12_9inch
     
@@ -36,6 +37,8 @@ internal enum Device: CaseIterable {
             return CGSize(width: 414, height: 736)
         case .phone5_8inch:
             return CGSize(width: 375, height: 812)
+        case .phone6_5inch:
+            return CGSize(width: 414, height: 896)
         case .pad:
             return CGSize(width: 768, height: 1024)
         case .pad12_9inch:
@@ -45,7 +48,7 @@ internal enum Device: CaseIterable {
     
     internal var interfaceIdiom: UIUserInterfaceIdiom {
         switch self {
-        case .phone3_5inch, .phone4inch, .phone4_7inch, .phone5_5inch, .phone5_8inch:
+        case .phone3_5inch, .phone4inch, .phone4_7inch, .phone5_5inch, .phone5_8inch, .phone6_5inch:
             return .phone
         case .pad, .pad12_9inch:
             return .pad
