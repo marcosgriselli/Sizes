@@ -32,7 +32,7 @@ class ReadmeViewController: UIViewController {
         view.addSubview(activityIndicator)
         activityIndicator.center = view.center
         
-        let url = URL(string:"https://github.com/marcosgriselli")
+        let url = URL(string:"https://github.com/marcosgriselli/Sizes/blob/master/README.md")
         let request = URLRequest(url: url!)
         webView.load(request)
     }
