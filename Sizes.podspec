@@ -17,8 +17,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.0'
 
   s.source_files = 'Sizes/Classes/**/*'
-  
-  s.resource_bundles = {
-      'Sizes' => ['Sizes/Assets/*']
-  }
+  s.swift_version = '4.2'
 end
