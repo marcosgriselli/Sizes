@@ -8,5 +8,5 @@
 import Foundation
 
 internal extension UIColor {
-    static var purple = UIColor(red: 144/255, green: 19/255, blue: 254/255, alpha: 1.0)
+    static var purple = #colorLiteral(red: 0.5647058824, green: 0.07450980392, blue: 0.9960784314, alpha: 1)
 }
