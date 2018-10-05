@@ -103,6 +103,10 @@ This is an open source project, so feel free to contribute. How?
 
 See [all contributors](https://github.com/marcosgriselli/Sizes/graphs/contributors)
 
+## 📣 Mentions
+
+- [iOS Goodies #250](https://ios-goodies.com/post/178728323086/week-250)
+
 ## 👨‍💻 Author
 Marcos Griselli | <a href="url"><img src="https://cdn.rawgit.com/marcosgriselli/ViewAnimator/cf065e96/Resources/twitterLogo.svg" height="17"></a> [@marcosgriselli](https://twitter.com/marcosgriselli)
 
