@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window.rootViewController = root
         root.contain(viewController: tabBarController)
+//        root.set(devices: Device.valuesForIdiom(.pad))
         window.makeKeyAndVisible()
         
         return true

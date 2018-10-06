@@ -27,6 +27,7 @@
 		BC92F423BB9C5472B912F15C4EFD9E0F /* Sizes-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB8896C4D28C2B8F5F9189AF5E47CF3 /* Sizes-dummy.m */; };
 		DB271A1577A66DA6E996E2C2DB68357A /* ConfigurationViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 4734286773197E3001B31DA9981BEC56 /* ConfigurationViewController.xib */; };
 		FB230DE921693FEF00CC1D82 /* UIApplication + Orientations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB230DE721693F3E00CC1D82 /* UIApplication + Orientations.swift */; };
+		FB230DEC2169450200CC1D82 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB230DEB2169450200CC1D82 /* Button.swift */; };
 		FB73374E2161180D002E29AF /* CGSize + Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB73374D2161180D002E29AF /* CGSize + Util.swift */; };
 		FEF68856C282F1FA8456BE99781782B7 /* Pods-Sizes_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6D52097B6DD4A008EAF20975BA5A05 /* Pods-Sizes_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -102,6 +103,7 @@
 		EF534E4E0A1C69DFF4646E117B8AB12D /* Sizes.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = Sizes.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EF761CCC5215F0A35D4B723D5AE5E691 /* Designable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Designable.swift; sourceTree = "<group>"; };
 		FB230DE721693F3E00CC1D82 /* UIApplication + Orientations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication + Orientations.swift"; sourceTree = "<group>"; };
+		FB230DEB2169450200CC1D82 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		FB73374D2161180D002E29AF /* CGSize + Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize + Util.swift"; sourceTree = "<group>"; };
 		FD9B4C95EED72F6423B8BE2669C93725 /* Sizes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sizes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -173,6 +175,7 @@
 		269EE30F12A6BDCD8ECEA6166B655707 /* Sizes */ = {
 			isa = PBXGroup;
 			children = (
+				FB230DEA216944E800CC1D82 /* UI */,
 				606677CC630A693B639139B18FC77AD0 /* Models */,
 				6DF0DE053E00B7591D8B0A3E2D8256C2 /* Pod */,
 				AB22041A2E659D8D6B32964716E3B0C9 /* Support Files */,
@@ -295,15 +298,23 @@
 		C36DE49CBFFA2D0B7D64C4B79A751A22 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				75F57FED7A896634BBAF2F40BF7BFE24 /* AutoLayoutHelper.swift */,
-				A7D5357E2C1E58374914AF255E4981C3 /* Colors.swift */,
 				4D20FEA4081925DFC68F46DFD6F844FE /* LayoutFactory.swift */,
-				EF761CCC5215F0A35D4B723D5AE5E691 /* Designable.swift */,
 				FB73374D2161180D002E29AF /* CGSize + Util.swift */,
 				FB230DE721693F3E00CC1D82 /* UIApplication + Orientations.swift */,
 			);
 			name = Util;
 			path = Sizes/Classes/Util;
+			sourceTree = "<group>";
+		};
+		FB230DEA216944E800CC1D82 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				75F57FED7A896634BBAF2F40BF7BFE24 /* AutoLayoutHelper.swift */,
+				A7D5357E2C1E58374914AF255E4981C3 /* Colors.swift */,
+				EF761CCC5215F0A35D4B723D5AE5E691 /* Designable.swift */,
+				FB230DEB2169450200CC1D82 /* Button.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -496,6 +507,7 @@
 				60F5806FDC40BEC17440D6C7601448DE /* ConfigurationViewController.swift in Sources */,
 				DB271A1577A66DA6E996E2C2DB68357A /* ConfigurationViewController.xib in Sources */,
 				74A09A550E0A6FE35D477ECF1C7874AF /* Designable.swift in Sources */,
+				FB230DEC2169450200CC1D82 /* Button.swift in Sources */,
 				60ECB737C52A1471FC5A86667CEEC414 /* Device.swift in Sources */,
 				6D89C3D6F986C88841D6F151539DA93F /* Layout.swift in Sources */,
 				60C994BB75D6C94F4F35E16D5D1F0597 /* Orientation.swift in Sources */,

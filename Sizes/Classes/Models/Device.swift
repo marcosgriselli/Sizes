@@ -7,7 +7,7 @@
 
 import UIKit
 
-internal enum Device: CaseIterable {
+public enum Device: CaseIterable {
     case phone3_5inch
     case phone4inch
     case phone4_7inch
@@ -53,5 +53,31 @@ internal enum Device: CaseIterable {
         case .pad, .pad12_9inch:
             return .pad
         }
+    }
+    
+    internal var name: String {
+        switch self {
+        case .phone3_5inch:
+            return "iPhone 4s"
+        case .phone4inch:
+            return "iPhone 5s"
+        case .phone4_7inch:
+            return "iPhone 8"
+        case .phone5_5inch:
+            return "iPhone 8+"
+        case .phone5_8inch:
+            return "iPhone XS"
+        case .phone6_5inch:
+            return "iPhone XS Max"
+        case .pad:
+            return "iPad 10.5"
+        case .pad12_9inch:
+            return "iPad 12.9"
+        }
+    }
+    
+    /// MARK: - Public
+    public static func valuesForIdiom(_ idiom: UIUserInterfaceIdiom) -> [Device] {
+        return allCases.filter { $0.interfaceIdiom == idiom }
     }
 }

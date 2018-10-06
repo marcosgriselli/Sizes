@@ -35,6 +35,12 @@ internal class ConfigurationViewController: UIViewController {
     }
     
     /// TODO: - Select available font sizes.
+    var supportedDevices: [Device] = Device.allCases {
+        didSet {
+            set(devices: supportedDevices)
+        }
+    }
+    
     let textSizes: [UIContentSizeCategory] = [.extraSmall, .small, .medium, .large, .extraLarge, .extraExtraLarge, .extraExtraExtraLarge, .accessibilityMedium, .accessibilityLarge, .accessibilityExtraLarge]
     
     var update: ((Orientation, Device, UIContentSizeCategory) -> Void)?
@@ -50,12 +56,28 @@ internal class ConfigurationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        /// Setup
         orientationSection.isHidden = !UIApplication.shared.supportsPortraitAndLandscape
+        set(devices: supportedDevices)
+        
         panGesture.cancelsTouchesInView = false
         panGesture.delegate = self
 
         /// TODO: - Use a better approach.
         view.transform = CGAffineTransform(translationX: 0, y: view.bounds.height)
+    }
+    
+    private func set(devices: [Device]) {
+        deviceStackView.arrangedSubviews.forEach {
+            deviceStackView.removeArrangedSubview($0)
+            $0.removeFromSuperview()
+        }
+        for device in devices {
+            let button = Button()
+            button.setTitle(device.name, for: .normal)
+            button.addTarget(self, action: #selector(deviceSelected(_:)), for: .touchUpInside)
+            deviceStackView.addArrangedSubview(button)
+        }
     }
 
     @IBAction func portraitSelected(_ sender: UIButton) {
@@ -73,7 +95,7 @@ internal class ConfigurationViewController: UIViewController {
         guard let index = deviceStackView.arrangedSubviews.index(of: sender) else {
             return
         }
-        selectedDevice = Device.allCases[index]
+        selectedDevice = supportedDevices[index]
     }
     
     @IBAction func updateText(_ sender: UISlider) {

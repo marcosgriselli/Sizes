@@ -118,4 +118,8 @@ open class SizesViewController: UIViewController {
         ]
         NSLayoutConstraint.activate(currentConstraints)
     }
+    
+    public func set(devices: [Device]) {
+        configurationController.supportedDevices = devices
+    }
 }
