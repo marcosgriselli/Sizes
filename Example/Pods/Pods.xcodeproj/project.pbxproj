@@ -26,7 +26,7 @@
 		BBE04C15BE124189BD4D754E8C3F0F4B /* Pods-Sizes_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBC1A1F3AA2F692F1AF0D2A5B59F04 /* Pods-Sizes_Example-dummy.m */; };
 		BC92F423BB9C5472B912F15C4EFD9E0F /* Sizes-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB8896C4D28C2B8F5F9189AF5E47CF3 /* Sizes-dummy.m */; };
 		DB271A1577A66DA6E996E2C2DB68357A /* ConfigurationViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 4734286773197E3001B31DA9981BEC56 /* ConfigurationViewController.xib */; };
-		FB73374E2161180D002E29AF /* CGSize + Invert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB73374D2161180D002E29AF /* CGSize + Invert.swift */; };
+		FB73374E2161180D002E29AF /* CGSize + Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB73374D2161180D002E29AF /* CGSize + Util.swift */; };
 		FEF68856C282F1FA8456BE99781782B7 /* Pods-Sizes_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6D52097B6DD4A008EAF20975BA5A05 /* Pods-Sizes_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -100,7 +100,7 @@
 		EBF73866576C02C2764221FB357BA882 /* Pods-Sizes_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Sizes_Tests-resources.sh"; sourceTree = "<group>"; };
 		EF534E4E0A1C69DFF4646E117B8AB12D /* Sizes.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = Sizes.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EF761CCC5215F0A35D4B723D5AE5E691 /* Designable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Designable.swift; sourceTree = "<group>"; };
-		FB73374D2161180D002E29AF /* CGSize + Invert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize + Invert.swift"; sourceTree = "<group>"; };
+		FB73374D2161180D002E29AF /* CGSize + Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize + Util.swift"; sourceTree = "<group>"; };
 		FD9B4C95EED72F6423B8BE2669C93725 /* Sizes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sizes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -297,7 +297,7 @@
 				A7D5357E2C1E58374914AF255E4981C3 /* Colors.swift */,
 				4D20FEA4081925DFC68F46DFD6F844FE /* LayoutFactory.swift */,
 				EF761CCC5215F0A35D4B723D5AE5E691 /* Designable.swift */,
-				FB73374D2161180D002E29AF /* CGSize + Invert.swift */,
+				FB73374D2161180D002E29AF /* CGSize + Util.swift */,
 			);
 			name = Util;
 			path = Sizes/Classes/Util;
@@ -481,7 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB73374E2161180D002E29AF /* CGSize + Invert.swift in Sources */,
+				FB73374E2161180D002E29AF /* CGSize + Util.swift in Sources */,
 				05C9403B91DB0950956C969716453393 /* AutoLayoutHelper.swift in Sources */,
 				5AC6A37F64D91D0A885AF9AD2932B49D /* Colors.swift in Sources */,
 				A2FC501168CFA6AE98AE0A89D18EB3D7 /* LayoutFactory.swift in Sources */,
