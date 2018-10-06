@@ -61,7 +61,7 @@ open class SizesViewController: UIViewController {
         }
     }
     
-    private func presentConfiguration() {
+    public func presentConfiguration() {
         DispatchQueue.main.async { [unowned self] in
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.75, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
                 self.configurationController.view.transform = .identity

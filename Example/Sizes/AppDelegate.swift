@@ -11,9 +11,9 @@ import Sizes
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     let window = UIWindow()
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let root = SizesViewController()
@@ -29,7 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window.rootViewController = root
         root.contain(viewController: tabBarController)
-//        root.set(devices: Device.valuesForIdiom(.pad))
+        //        root.set(devices: Device.valuesForIdiom(.pad))
+        if CommandLine.arguments.contains("-uitest") {
+            root.presentConfiguration()
+        }
         window.makeKeyAndVisible()
         
         return true

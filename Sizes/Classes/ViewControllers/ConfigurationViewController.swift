@@ -76,6 +76,7 @@ internal class ConfigurationViewController: UIViewController {
             let button = Button()
             button.setTitle(device.name, for: .normal)
             button.addTarget(self, action: #selector(deviceSelected(_:)), for: .touchUpInside)
+            button.accessibilityIdentifier = device.name
             deviceStackView.addArrangedSubview(button)
         }
     }

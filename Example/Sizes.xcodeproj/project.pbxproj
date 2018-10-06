@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		C98A470F60561190B231D996 /* Pods_Sizes_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CD9ED3AD462901E10F812A /* Pods_Sizes_Tests.framework */; };
+		FB230DF4216947EA00CC1D82 /* Sizes_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB230DF3216947EA00CC1D82 /* Sizes_ExampleUITests.swift */; };
 		FB69EF2C2152808400D3E284 /* UIViewController + SafeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB69EF2B2152808400D3E284 /* UIViewController + SafeArea.swift */; };
 		FB7337502161251F002E29AF /* ReadmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB73374F2161251F002E29AF /* ReadmeViewController.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +27,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
 			remoteInfo = Sizes;
+		};
+		FB230DF6216947EA00CC1D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = Sizes_Example;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -49,6 +57,9 @@
 		9B77CFB1D7DC9172C875F99F /* Pods-Sizes_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sizes_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sizes_Tests/Pods-Sizes_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		BAA35FF65E8C54C57D8170D3 /* Sizes.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Sizes.podspec; path = ../Sizes.podspec; sourceTree = "<group>"; };
 		C03D3993D1015065CD903D53 /* Pods-Sizes_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sizes_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sizes_Example/Pods-Sizes_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		FB230DF1216947EA00CC1D82 /* Sizes_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sizes_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB230DF3216947EA00CC1D82 /* Sizes_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes_ExampleUITests.swift; sourceTree = "<group>"; };
+		FB230DF5216947EA00CC1D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB69EF2B2152808400D3E284 /* UIViewController + SafeArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + SafeArea.swift"; sourceTree = "<group>"; };
 		FB73374F2161251F002E29AF /* ReadmeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadmeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +78,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C98A470F60561190B231D996 /* Pods_Sizes_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB230DEE216947EA00CC1D82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +108,7 @@
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for Sizes */,
 				607FACE81AFB9204008FA782 /* Tests */,
+				FB230DF2216947EA00CC1D82 /* Sizes_ExampleUITests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				1ACAC4D9459091B92CB7E386 /* Pods */,
 				F3BE14BCBAE93D5B58235E38 /* Frameworks */,
@@ -101,6 +120,7 @@
 			children = (
 				607FACD01AFB9204008FA782 /* Sizes_Example.app */,
 				607FACE51AFB9204008FA782 /* Sizes_Tests.xctest */,
+				FB230DF1216947EA00CC1D82 /* Sizes_ExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,6 +185,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FB230DF2216947EA00CC1D82 /* Sizes_ExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FB230DF3216947EA00CC1D82 /* Sizes_ExampleUITests.swift */,
+				FB230DF5216947EA00CC1D82 /* Info.plist */,
+			);
+			path = Sizes_ExampleUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -206,13 +235,32 @@
 			productReference = 607FACE51AFB9204008FA782 /* Sizes_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		FB230DF0216947EA00CC1D82 /* Sizes_ExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB230DF8216947EA00CC1D82 /* Build configuration list for PBXNativeTarget "Sizes_ExampleUITests" */;
+			buildPhases = (
+				FB230DED216947EA00CC1D82 /* Sources */,
+				FB230DEE216947EA00CC1D82 /* Frameworks */,
+				FB230DEF216947EA00CC1D82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB230DF7216947EA00CC1D82 /* PBXTargetDependency */,
+			);
+			name = Sizes_ExampleUITests;
+			productName = Sizes_ExampleUITests;
+			productReference = FB230DF1216947EA00CC1D82 /* Sizes_ExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				DefaultBuildSystemTypeForWorkspace = Original;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
@@ -225,6 +273,12 @@
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = 8PC4X7QUY9;
 						LastSwiftMigration = 1000;
+						TestTargetID = 607FACCF1AFB9204008FA782;
+					};
+					FB230DF0216947EA00CC1D82 = {
+						CreatedOnToolsVersion = 10.0;
+						DevelopmentTeam = 8PC4X7QUY9;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -244,6 +298,7 @@
 			targets = (
 				607FACCF1AFB9204008FA782 /* Sizes_Example */,
 				607FACE41AFB9204008FA782 /* Sizes_Tests */,
+				FB230DF0216947EA00CC1D82 /* Sizes_ExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -260,6 +315,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		607FACE31AFB9204008FA782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB230DEF216947EA00CC1D82 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -345,6 +407,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FB230DED216947EA00CC1D82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB230DF4216947EA00CC1D82 /* Sizes_ExampleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -352,6 +422,11 @@
 			isa = PBXTargetDependency;
 			target = 607FACCF1AFB9204008FA782 /* Sizes_Example */;
 			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
+		};
+		FB230DF7216947EA00CC1D82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* Sizes_Example */;
+			targetProxy = FB230DF6216947EA00CC1D82 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -550,6 +625,59 @@
 			};
 			name = Release;
 		};
+		FB230DF9216947EA00CC1D82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 8PC4X7QUY9;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Sizes_ExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.marcosgriselli.Sizes-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Sizes_Example;
+			};
+			name = Debug;
+		};
+		FB230DFA216947EA00CC1D82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8PC4X7QUY9;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Sizes_ExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.marcosgriselli.Sizes-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Sizes_Example;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -576,6 +704,15 @@
 			buildConfigurations = (
 				607FACF31AFB9204008FA782 /* Debug */,
 				607FACF41AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB230DF8216947EA00CC1D82 /* Build configuration list for PBXNativeTarget "Sizes_ExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB230DF9216947EA00CC1D82 /* Debug */,
+				FB230DFA216947EA00CC1D82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

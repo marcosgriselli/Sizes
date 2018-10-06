@@ -55,6 +55,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QmS-CO-Gn9">
                                             <rect key="frame" x="0.0" y="0.0" width="70" height="44"/>
                                             <color key="backgroundColor" red="0.56470588239999997" green="0.074509803920000006" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="portrait"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="44" id="bmh-zP-cOT"/>
                                             </constraints>
@@ -78,6 +79,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNA-TH-lPQ">
                                             <rect key="frame" x="80" y="0.0" width="99" height="44"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="landscape"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                             <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                                             <state key="normal" title="landscape">
@@ -366,6 +368,7 @@
                                         <slider opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="0.0" maxValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="NHE-nA-MqD">
                                             <rect key="frame" x="18.5" y="6" width="271.5" height="31"/>
                                             <color key="tintColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="fontSlider"/>
                                             <connections>
                                                 <action selector="updateText:" destination="-1" eventType="valueChanged" id="zfG-eF-GUL"/>
                                             </connections>
