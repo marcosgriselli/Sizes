@@ -13,7 +13,10 @@ open class SizesViewController: UIViewController {
     private weak var containedView: UIView!
     private var currentConstraints = [NSLayoutConstraint]()
     private let configurationController = ConfigurationViewController()
-
+    
+    /// MARK: - Public API
+    public var scalesViewIfNecessary: Bool = true
+    
     override open var canBecomeFirstResponder: Bool {
         get {
             return true
@@ -39,7 +42,7 @@ open class SizesViewController: UIViewController {
         configView.layer.shadowRadius = 4
         configView.layer.shadowOffset = CGSize(width: 0, height: -2)
         view.addSubview(configView)
-
+        
         NSLayoutConstraint.activate([
             configView.leftAnchor.constraint(equalTo: view.leftAnchor),
             configView.rightAnchor.constraint(equalTo: view.rightAnchor),
@@ -82,6 +85,16 @@ open class SizesViewController: UIViewController {
         setOverrideTraitCollection(layout.traits, forChild: containedViewController)
         containedViewController.view.setNeedsLayout()
         containedViewController.view.layoutIfNeeded()
+        
+        if scalesViewIfNecessary {
+            containedView.transform = .identity
+            let containedSize = containedView.bounds.size
+            let canvasSize = view.bounds.size
+            if containedSize.exceeds(size: canvasSize) {
+                let scaledSize = containedSize.scaleToFit(size: canvasSize)
+                containedView.transform = CGAffineTransform(scaleX: scaledSize.width / containedSize.width, y: scaledSize.height / containedSize.height)
+            }
+        }
     }
     
     public func contain(viewController: UIViewController) {
