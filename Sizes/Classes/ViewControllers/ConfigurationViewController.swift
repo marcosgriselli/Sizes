@@ -50,7 +50,7 @@ internal class ConfigurationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        orientationSection.isHidden = !supportsRotation
+        orientationSection.isHidden = !UIApplication.shared.supportsPortraitAndLandscape
         panGesture.cancelsTouchesInView = false
         panGesture.delegate = self
 
