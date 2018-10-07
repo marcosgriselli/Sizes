@@ -5,7 +5,7 @@
 //  Created by Marcos Griselli on 06/10/2018.
 //
 
-import Foundation
+import UIKit
 
 extension UIApplication {
 
