@@ -12,11 +12,10 @@ import Sizes
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    let window = UIWindow()
+    let window = SizesWindow()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let root = SizesViewController()
         let tabBarController = UITabBarController()
         let navigation = UINavigationController(rootViewController: ViewController())
         if #available(iOS 11.0, *) {
@@ -27,11 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         readme.tabBarItem = UITabBarItem(title: "Readme", image: UIImage(named: "github"), tag: 1)
         tabBarController.setViewControllers([navigation, readme], animated: false)
         
-        window.rootViewController = root
-        root.contain(viewController: tabBarController)
+        window.rootViewController = tabBarController
         //        root.set(devices: Device.valuesForIdiom(.pad))
-        if CommandLine.arguments.contains("-uitest") {
-            root.presentConfiguration()
+        if CommandLine.arguments.contains("-uitest"), let sizesVC = window.sizesViewController {
+            sizesVC.presentConfiguration()
         }
         window.makeKeyAndVisible()
         
