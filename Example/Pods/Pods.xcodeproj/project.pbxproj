@@ -16,6 +16,7 @@
 		65DA48EA620F145052085D659AD90A0F /* Pods-Sizes_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DB98984468ED0D329A041618AC4171E0 /* Pods-Sizes_Tests-dummy.m */; };
 		6D89C3D6F986C88841D6F151539DA93F /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD638D16E22056FCB9DE8402366DB4EC /* Layout.swift */; };
 		725297DC00C531B210CE257EE909DA4D /* Pods-Sizes_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CBB0A69C4D39E9FC1C812CE97F6CC02 /* Pods-Sizes_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		792FE25821737DFB0015447A /* SizesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792FE25621737D940015447A /* SizesWindow.swift */; };
 		915A0EE7A07D592B34C9AD71EB250047 /* SizesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3631A0DE209DCB7A19112A1200B4DB11 /* SizesViewController.swift */; };
 		98F94F76C92B051C0D619E784FFEE4F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		A2FC501168CFA6AE98AE0A89D18EB3D7 /* LayoutFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D20FEA4081925DFC68F46DFD6F844FE /* LayoutFactory.swift */; };
@@ -76,6 +77,7 @@
 		6AEB1C101487CB9765A164A480496EAC /* Pods-Sizes_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sizes_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6BA766608A9745B527FAEA3662535398 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		78F97FE2BC434610DABF7D647178FC50 /* Device.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		792FE25621737D940015447A /* SizesWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizesWindow.swift; sourceTree = "<group>"; };
 		79E225EC17A90998BF8D2E5C46554427 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CDB5F76365A479F784DE3BF96E24521 /* Sizes-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Sizes-umbrella.h"; sourceTree = "<group>"; };
 		7CF5109BC79CC15EFD1A067DC91AB8D4 /* Pods_Sizes_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sizes_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -313,6 +315,7 @@
 				FB0996D7216A9CE300F22D06 /* Button.swift */,
 				FB0996DA216A9CE300F22D06 /* Colors.swift */,
 				FB0996D8216A9CE300F22D06 /* Designable.swift */,
+				792FE25621737D940015447A /* SizesWindow.swift */,
 			);
 			name = UI;
 			path = Sizes/Classes/UI;
@@ -513,6 +516,7 @@
 				60C994BB75D6C94F4F35E16D5D1F0597 /* Orientation.swift in Sources */,
 				FB230DE921693FEF00CC1D82 /* UIApplication + Orientations.swift in Sources */,
 				BC92F423BB9C5472B912F15C4EFD9E0F /* Sizes-dummy.m in Sources */,
+				792FE25821737DFB0015447A /* SizesWindow.swift in Sources */,
 				915A0EE7A07D592B34C9AD71EB250047 /* SizesViewController.swift in Sources */,
 				FB0996DB216A9CE300F22D06 /* Button.swift in Sources */,
 			);
