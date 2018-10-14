@@ -13,14 +13,11 @@ open class SizesWindow: UIWindow {
     private(set) open var sizesViewController: SizesViewController?
     
     override open var rootViewController: UIViewController? {
-        get {
-            return containedRootViewController
-        }
-        set {
-            if let rootVC = newValue, !rootVC.isKind(of: SizesViewController.self) {
+        didSet {
+            if let rootVC = rootViewController, !rootVC.isKind(of: SizesViewController.self) {
                 let root = SizesViewController()
                 sizesViewController = root
-                self.rootViewController = root
+                rootViewController = root
                 containedRootViewController = rootVC
                 root.contain(viewController: rootVC)
             }
