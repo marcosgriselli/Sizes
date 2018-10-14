@@ -52,7 +52,7 @@ Sizes require you to use [Auto Layout]((https://developer.apple.com/library/arch
 
 For font updates you'll need to use [Dynamic Type](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/typography/).
 
-**Programatically:**
+**Programmatically:**
 
 ```swift 
 let label = UILabel()
