@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Available iOS devices with unique sizing.
 public enum Device: CaseIterable {
     case phone3_5inch
     case phone4inch
@@ -17,6 +18,9 @@ public enum Device: CaseIterable {
     case pad
     case pad12_9inch
     
+    /// Init based on the device screen size we want.
+    ///
+    /// - Parameter size: device UIScreen size.
     internal init?(size: CGSize) {
         guard let device = Device.allCases.first(where: { $0.size == size }) else {
             return nil
@@ -46,6 +50,7 @@ public enum Device: CaseIterable {
         }
     }
     
+    /// InterfaceIdiom to filter between iPhones and iPads
     internal var interfaceIdiom: UIUserInterfaceIdiom {
         switch self {
         case .phone3_5inch, .phone4inch, .phone4_7inch, .phone5_5inch, .phone5_8inch, .phone6_5inch:
@@ -55,6 +60,7 @@ public enum Device: CaseIterable {
         }
     }
     
+    /// Common name for each device
     internal var name: String {
         switch self {
         case .phone3_5inch:
@@ -77,6 +83,11 @@ public enum Device: CaseIterable {
     }
     
     /// MARK: - Public
+    
+    /// Filteres all the posibe devices and returns the ones that match the idiom input
+    ///
+    /// - Parameter idiom: idiom to filter devices
+    /// - Returns: array of devices with passed idiom
     public static func valuesForIdiom(_ idiom: UIUserInterfaceIdiom) -> [Device] {
         return allCases.filter { $0.interfaceIdiom == idiom }
     }

@@ -16,8 +16,6 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		C98A470F60561190B231D996 /* Pods_Sizes_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CD9ED3AD462901E10F812A /* Pods_Sizes_Tests.framework */; };
 		FB230DF4216947EA00CC1D82 /* Sizes_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB230DF3216947EA00CC1D82 /* Sizes_ExampleUITests.swift */; };
-		FB69EF2C2152808400D3E284 /* UIViewController + SafeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB69EF2B2152808400D3E284 /* UIViewController + SafeArea.swift */; };
-		FB7337502161251F002E29AF /* ReadmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB73374F2161251F002E29AF /* ReadmeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,13 +53,11 @@
 		8C99B0365BE78C15D0625BE1 /* Pods-Sizes_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sizes_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sizes_Example/Pods-Sizes_Example.release.xcconfig"; sourceTree = "<group>"; };
 		941193A275D5B9EA8A76D88C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		9B77CFB1D7DC9172C875F99F /* Pods-Sizes_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sizes_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sizes_Tests/Pods-Sizes_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		BAA35FF65E8C54C57D8170D3 /* Sizes.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Sizes.podspec; path = ../Sizes.podspec; sourceTree = "<group>"; };
+		BAA35FF65E8C54C57D8170D3 /* Sizes.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Sizes.podspec; path = ../Sizes.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C03D3993D1015065CD903D53 /* Pods-Sizes_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sizes_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sizes_Example/Pods-Sizes_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		FB230DF1216947EA00CC1D82 /* Sizes_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sizes_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB230DF3216947EA00CC1D82 /* Sizes_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes_ExampleUITests.swift; sourceTree = "<group>"; };
 		FB230DF5216947EA00CC1D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FB69EF2B2152808400D3E284 /* UIViewController + SafeArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + SafeArea.swift"; sourceTree = "<group>"; };
-		FB73374F2161251F002E29AF /* ReadmeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadmeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,8 +126,6 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				FB73374F2161251F002E29AF /* ReadmeViewController.swift */,
-				FB69EF2B2152808400D3E284 /* UIViewController + SafeArea.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -392,9 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB69EF2C2152808400D3E284 /* UIViewController + SafeArea.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				FB7337502161251F002E29AF /* ReadmeViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,6 +555,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEBUG\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -579,6 +572,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

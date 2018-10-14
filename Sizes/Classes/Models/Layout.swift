@@ -7,8 +7,8 @@
 
 import UIKit
 
+/// Basic strucutre to contain the data we need to produce our requried layout.
 internal struct Layout {
-
     let size: CGSize
     let traits: UITraitCollection
 }

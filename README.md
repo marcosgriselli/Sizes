@@ -52,7 +52,7 @@ Sizes require you to use [Auto Layout]((https://developer.apple.com/library/arch
 
 For font updates you'll need to use [Dynamic Type](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/typography/).
 
-**Programatically:**
+**Programmatically:**
 
 ```swift 
 let label = UILabel()
@@ -66,24 +66,20 @@ label.adjustsFontForContentSizeCategory = true
 
 ### Setup
 
-In order to use Sizes you'll need to make your `AppDelegate's` rootViewController an instance of `SizesViewController` and contain the apps first view controller.
+I highly recommend you only use this while on `#DEBUG` mode.
+
+The best way to setup Sizes is to use the `SizesWindow` as your `AppDelegates'` window. This will automatically make a `SizesViewController` instance contain your apps root view controller and you'll still be able to use code like `UIApplication.shared.windows.first?.rootViewController as? YourInitialCustomViewController` with no issues. 
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    let root = SizesViewController()
-    let navigation = UINavigationController(rootViewController: ViewController())
-    window.rootViewController = root
-    root.contain(viewController: navigation)
-    window.makeKeyAndVisible()
+    #if DEBUG
+        window = SizesWindow()
+        window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!
+        window?.makeKeyAndVisible()
+    #endif
     return true
 }
 ```
-
-⚠️ This might not be the ideal solution for all cases since it will require you to set the root view controller manually. Or if you're accessing the apps root view controller from many places this approach will clash with it.
-
-⚠️ I recommend you only use this while on `#DEBUG` mode
-
-I'm open to exploring new solutions to this issue + ways of setting this up on Storyboards.
 
 ### Usage
 

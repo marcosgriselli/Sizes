@@ -7,9 +7,17 @@
 
 import UIKit
 
+/// Factory for creating a Layout objects based on a set of parameters
 internal class LayoutFactory: NSObject {
     
-    internal static func configurationFor(device: Device, orientation: Orientation, contentSizeCategory category: UIContentSizeCategory) -> Layout {
+    /// Creates a Layout object
+    ///
+    /// - Parameters:
+    ///   - device: device to set the layout size and traits
+    ///   - orientation: orientation to ajust the device size and traits
+    ///   - category: font size UIContentSizeCategory
+    /// - Returns: a Layout object 
+    internal static func layoutFor(device: Device, orientation: Orientation, contentSizeCategory category: UIContentSizeCategory) -> Layout {
         var traits: [UITraitCollection]
         switch (device, orientation) {
         case (.phone3_5inch, .portrait):
