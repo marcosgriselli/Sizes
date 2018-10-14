@@ -7,10 +7,14 @@
 
 import UIKit
 
+/// Orientation of the device. We're not supporting all the orientations for now.
 internal enum Orientation {
     case portrait
     case landscape
     
+    /// Init based on all the posible orientations into our supported ones
+    ///
+    /// - Parameter current: current device orientation
     init(current: UIInterfaceOrientation) {
         switch current {
         case .portrait, .portraitUpsideDown, .unknown:

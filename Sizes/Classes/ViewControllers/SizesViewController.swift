@@ -7,26 +7,34 @@
 
 import UIKit
 
+/// This is the main view controller of the library. It will contain
+/// both the configuration view and the apps real root view controller
+/// to resize when necessary.
 open class SizesViewController: UIViewController {
     
+    /// Your apps root view controller
     private(set) weak var containedController: UIViewController?
+    
+    /// containedController's view
     private weak var containedView: UIView!
+    
+    /// Constraints that update when the device type changes
     private var currentConstraints = [NSLayoutConstraint]()
+    
+    /// Configuration controller to setup the desired layout
     private let configurationController = ConfigurationViewController()
     
     /// MARK: - Public API
-    public var scalesViewIfNecessary: Bool = true
     
-    override open var canBecomeFirstResponder: Bool {
-        get {
-            return true
-        }
-    }
+    /// Scales the contained view when the device to layout is larger than the device than is currently running Sizes
+    public var scalesViewIfNecessary: Bool = true
+
+    /// Defines if the configuration view should present on shake
+    public var shakeGestureEnabled: Bool = true
     
     open override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(white: 0.88, alpha: 1.0)
-        becomeFirstResponder()
         
         addChild(configurationController)
         let configView = configurationController.view!
@@ -54,13 +62,16 @@ open class SizesViewController: UIViewController {
         }
     }
     
-    // Enable detection of shake motion
+    /// Enable detection of shake motion
     override open func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            presentConfiguration()
+            if shakeGestureEnabled {
+                presentConfiguration()
+            }
         }
     }
     
+    /// Manually present the configuration UI
     public func presentConfiguration() {
         DispatchQueue.main.async { [unowned self] in
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.75, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
@@ -69,6 +80,12 @@ open class SizesViewController: UIViewController {
         }
     }
     
+    /// Performs layout for selected device, orientation and content size.
+    ///
+    /// - Parameters:
+    ///   - device: device to be simulated
+    ///   - orientation: device orientation
+    ///   - contentSize: font size from UIContentSizeCategory
     internal func debug(device: Device,
                         orientation: Orientation,
                         contentSize: UIContentSizeCategory) {
@@ -76,7 +93,7 @@ open class SizesViewController: UIViewController {
             return
         }
         
-        let layout = LayoutFactory.configurationFor(device: device, orientation: orientation, contentSizeCategory: contentSize)
+        let layout = LayoutFactory.layoutFor(device: device, orientation: orientation, contentSizeCategory: contentSize)
         
         currentConstraints.forEach { $0.isActive = false }
         containedView.removeConstraints(currentConstraints)
@@ -97,6 +114,9 @@ open class SizesViewController: UIViewController {
         }
     }
     
+    /// Contain the passed view controller to resize it and modify its traits
+    ///
+    /// - Parameter viewController: view controller to be modified by Sizes
     public func contain(viewController: UIViewController) {
         addChild(viewController)
         let childView = viewController.view!
@@ -109,6 +129,7 @@ open class SizesViewController: UIViewController {
         containedController = viewController
     }
     
+    /// Set the constraints to the device default
     private func resetSizeConstraints() {
         currentConstraints.forEach { $0.isActive = false }
         containedView.removeConstraints(currentConstraints)
@@ -119,6 +140,9 @@ open class SizesViewController: UIViewController {
         NSLayoutConstraint.activate(currentConstraints)
     }
     
+    /// Set the devices listed on the configuration view
+    ///
+    /// - Parameter devices: devices available
     public func set(devices: [Device]) {
         configurationController.supportedDevices = devices
     }

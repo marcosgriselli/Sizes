@@ -16,25 +16,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        /// Instanciate SizesViewController
         let root = SizesViewController()
-        let tabBarController = UITabBarController()
-        let navigation = UINavigationController(rootViewController: ViewController())
-        if #available(iOS 11.0, *) {
-            navigation.navigationBar.prefersLargeTitles = true
-        }
-        navigation.tabBarItem = UITabBarItem(title: "Sizes", image: UIImage(named: "shapes"), tag: 0)
-        let readme = ReadmeViewController()
-        readme.tabBarItem = UITabBarItem(title: "Readme", image: UIImage(named: "github"), tag: 1)
-        tabBarController.setViewControllers([navigation, readme], animated: false)
         
-        window.rootViewController = root
-        root.contain(viewController: tabBarController)
-        //        root.set(devices: Device.valuesForIdiom(.pad))
+        let tabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!
+        
+        /// I highly recommend Sizes is used only on DEBUG mode.
+        #if DEBUG
+            root.contain(viewController: tabBarController)
+        #endif
+        
+        /// Automatically present the Sizes configuration sheet if we're running UITests.
         if CommandLine.arguments.contains("-uitest") {
             root.presentConfiguration()
         }
-        window.makeKeyAndVisible()
         
+        window.rootViewController = root
+        window.makeKeyAndVisible()
         return true
     }
 }

@@ -9,25 +9,29 @@ import UIKit
 
 internal class ConfigurationViewController: UIViewController {
     
+    // MARK: - IBOutlets
     @IBOutlet weak var orientationSection: UIView!
     @IBOutlet weak var orientationStackView: UIStackView!
-    @IBOutlet var panGesture: UIPanGestureRecognizer!
     @IBOutlet weak var deviceStackView: UIStackView!
     @IBOutlet weak var textSizeLabel: UILabel!
+    @IBOutlet var panGesture: UIPanGestureRecognizer!
     
     /// TODO: - Set default correctly.
+    /// Selected orientation for layout
     private var selectedOrientation: Orientation = .portrait {
         didSet {
             update?(selectedOrientation, selectedDevice, selectedTextSize)
         }
     }
     
+    /// Selected device for layout
     private var selectedDevice = Device(size: UIScreen.main.bounds.size) ?? .phone4_7inch {
         didSet {
             update?(selectedOrientation, selectedDevice, selectedTextSize)
         }
     }
     
+    /// Selected content size for layout
     private var selectedTextSize: UIContentSizeCategory = .large {
         didSet {
             update?(selectedOrientation, selectedDevice, selectedTextSize)
@@ -35,14 +39,17 @@ internal class ConfigurationViewController: UIViewController {
     }
     
     /// TODO: - Select available font sizes.
+    /// Devices to be listed on the configuration view
     var supportedDevices: [Device] = Device.allCases {
         didSet {
             set(devices: supportedDevices)
         }
     }
     
+    /// Available content size categories
     let textSizes: [UIContentSizeCategory] = [.extraSmall, .small, .medium, .large, .extraLarge, .extraExtraLarge, .extraExtraExtraLarge, .accessibilityMedium, .accessibilityLarge, .accessibilityExtraLarge]
     
+    /// Update layout closure
     var update: ((Orientation, Device, UIContentSizeCategory) -> Void)?
     
     init() {
@@ -67,13 +74,13 @@ internal class ConfigurationViewController: UIViewController {
         view.transform = CGAffineTransform(translationX: 0, y: view.bounds.height)
     }
     
+    /// Set the available devices on screen
+    ///
+    /// - Parameter devices: devices to be listed
     private func set(devices: [Device]) {
-        deviceStackView.arrangedSubviews.forEach {
-            deviceStackView.removeArrangedSubview($0)
-            $0.removeFromSuperview()
-        }
+        deviceStackView.removeArrangedSubviews()
         for device in devices {
-            let button = Button()
+            let button = Button(style: .normal)
             button.setTitle(device.name, for: .normal)
             button.addTarget(self, action: #selector(deviceSelected(_:)), for: .touchUpInside)
             button.accessibilityIdentifier = device.name
@@ -81,17 +88,17 @@ internal class ConfigurationViewController: UIViewController {
         }
     }
 
-    @IBAction func portraitSelected(_ sender: UIButton) {
+    @IBAction func portraitSelected(_ sender: Button) {
         select(button: sender, from: orientationStackView)
         selectedOrientation = .portrait
     }
     
-    @IBAction func landscapeSelected(_ sender: UIButton) {
+    @IBAction func landscapeSelected(_ sender: Button) {
         select(button: sender, from: orientationStackView)
         selectedOrientation = .landscape
     }
     
-    @IBAction func deviceSelected(_ sender: UIButton) {
+    @IBAction func deviceSelected(_ sender: Button) {
         select(button: sender, from: deviceStackView)
         guard let index = deviceStackView.arrangedSubviews.index(of: sender) else {
             return
@@ -105,16 +112,11 @@ internal class ConfigurationViewController: UIViewController {
         selectedTextSize = textSize
     }
     
-    private func select(button: UIButton, from stackView: UIStackView) {
-        stackView.arrangedSubviews.forEach {
-            let button = $0 as! UIButton
-            button.backgroundColor = .white
-            button.setTitleColor(.purple, for: .normal)
-            button.layer.borderWidth = 1
-        }
-        button.backgroundColor = .purple
-        button.setTitleColor(.white, for: .normal)
-        button.layer.borderWidth = 0
+    private func select(button: Button, from stackView: UIStackView) {
+        stackView.arrangedSubviews
+            .compactMap { $0 as? Button }
+            .forEach { $0.set(style: .normal) }
+        button.set(style: .selected)
     }
 
     @IBAction func dragged(_ sender: UIPanGestureRecognizer) {
@@ -137,6 +139,7 @@ internal class ConfigurationViewController: UIViewController {
     }
 }
 
+// MARK: - UIGestureRecognizerDelegate
 extension ConfigurationViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         guard let view = touch.view else {

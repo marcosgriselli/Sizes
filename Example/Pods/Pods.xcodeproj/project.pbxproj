@@ -24,11 +24,12 @@
 		BC92F423BB9C5472B912F15C4EFD9E0F /* Sizes-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB8896C4D28C2B8F5F9189AF5E47CF3 /* Sizes-dummy.m */; };
 		DB271A1577A66DA6E996E2C2DB68357A /* ConfigurationViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 4734286773197E3001B31DA9981BEC56 /* ConfigurationViewController.xib */; };
 		FB0996DB216A9CE300F22D06 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0996D7216A9CE300F22D06 /* Button.swift */; };
-		FB0996DC216A9CE300F22D06 /* Designable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0996D8216A9CE300F22D06 /* Designable.swift */; };
 		FB0996DD216A9CE300F22D06 /* AutoLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0996D9216A9CE300F22D06 /* AutoLayoutHelper.swift */; };
 		FB0996DE216A9CE300F22D06 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0996DA216A9CE300F22D06 /* Colors.swift */; };
 		FB230DE921693FEF00CC1D82 /* UIApplication + Orientations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB230DE721693F3E00CC1D82 /* UIApplication + Orientations.swift */; };
+		FB6A8589217381B80089DFFE /* UIStackView + Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6A8588217381B80089DFFE /* UIStackView + Util.swift */; };
 		FB73374E2161180D002E29AF /* CGSize + Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB73374D2161180D002E29AF /* CGSize + Util.swift */; };
+		FB9BF4FE217378F400C6FC93 /* Button+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9BF4FD217378F400C6FC93 /* Button+Style.swift */; };
 		FEF68856C282F1FA8456BE99781782B7 /* Pods-Sizes_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6D52097B6DD4A008EAF20975BA5A05 /* Pods-Sizes_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -100,11 +101,12 @@
 		EBF73866576C02C2764221FB357BA882 /* Pods-Sizes_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Sizes_Tests-resources.sh"; sourceTree = "<group>"; };
 		EF534E4E0A1C69DFF4646E117B8AB12D /* Sizes.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = Sizes.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FB0996D7216A9CE300F22D06 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		FB0996D8216A9CE300F22D06 /* Designable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Designable.swift; sourceTree = "<group>"; };
 		FB0996D9216A9CE300F22D06 /* AutoLayoutHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutHelper.swift; sourceTree = "<group>"; };
 		FB0996DA216A9CE300F22D06 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		FB230DE721693F3E00CC1D82 /* UIApplication + Orientations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication + Orientations.swift"; sourceTree = "<group>"; };
+		FB6A8588217381B80089DFFE /* UIStackView + Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Util.swift"; sourceTree = "<group>"; };
 		FB73374D2161180D002E29AF /* CGSize + Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize + Util.swift"; sourceTree = "<group>"; };
+		FB9BF4FD217378F400C6FC93 /* Button+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Style.swift"; sourceTree = "<group>"; };
 		FD9B4C95EED72F6423B8BE2669C93725 /* Sizes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sizes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -301,6 +303,7 @@
 				4D20FEA4081925DFC68F46DFD6F844FE /* LayoutFactory.swift */,
 				FB73374D2161180D002E29AF /* CGSize + Util.swift */,
 				FB230DE721693F3E00CC1D82 /* UIApplication + Orientations.swift */,
+				FB6A8588217381B80089DFFE /* UIStackView + Util.swift */,
 			);
 			name = Util;
 			path = Sizes/Classes/Util;
@@ -309,13 +312,21 @@
 		FB230DEA216944E800CC1D82 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FB9BF4FC217378E100C6FC93 /* Button */,
 				FB0996D9216A9CE300F22D06 /* AutoLayoutHelper.swift */,
-				FB0996D7216A9CE300F22D06 /* Button.swift */,
 				FB0996DA216A9CE300F22D06 /* Colors.swift */,
-				FB0996D8216A9CE300F22D06 /* Designable.swift */,
 			);
 			name = UI;
 			path = Sizes/Classes/UI;
+			sourceTree = "<group>";
+		};
+		FB9BF4FC217378E100C6FC93 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				FB0996D7216A9CE300F22D06 /* Button.swift */,
+				FB9BF4FD217378F400C6FC93 /* Button+Style.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -504,11 +515,12 @@
 				FB73374E2161180D002E29AF /* CGSize + Util.swift in Sources */,
 				A2FC501168CFA6AE98AE0A89D18EB3D7 /* LayoutFactory.swift in Sources */,
 				60F5806FDC40BEC17440D6C7601448DE /* ConfigurationViewController.swift in Sources */,
+				FB9BF4FE217378F400C6FC93 /* Button+Style.swift in Sources */,
+				FB6A8589217381B80089DFFE /* UIStackView + Util.swift in Sources */,
 				FB0996DE216A9CE300F22D06 /* Colors.swift in Sources */,
 				DB271A1577A66DA6E996E2C2DB68357A /* ConfigurationViewController.xib in Sources */,
 				60ECB737C52A1471FC5A86667CEEC414 /* Device.swift in Sources */,
 				FB0996DD216A9CE300F22D06 /* AutoLayoutHelper.swift in Sources */,
-				FB0996DC216A9CE300F22D06 /* Designable.swift in Sources */,
 				6D89C3D6F986C88841D6F151539DA93F /* Layout.swift in Sources */,
 				60C994BB75D6C94F4F35E16D5D1F0597 /* Orientation.swift in Sources */,
 				FB230DE921693FEF00CC1D82 /* UIApplication + Orientations.swift in Sources */,
