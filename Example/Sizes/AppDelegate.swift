@@ -28,9 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window.rootViewController = tabBarController
         
-        if CommandLine.arguments.contains("-uitest"), let sizesVC = window.sizesViewController {
-            //        sizesVC.set(devices: Device.valuesForIdiom(.pad))
-            sizesVC.presentConfiguration()
+        if CommandLine.arguments.contains("-uitest") {
+//            window.sizesViewController.set(devices: Device.valuesForIdiom(.pad))
+            window.sizesViewController.presentConfiguration()
         }
         window.makeKeyAndVisible()
         

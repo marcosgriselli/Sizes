@@ -9,18 +9,18 @@ import UIKit
 
 open class SizesWindow: UIWindow {
     
-    private(set) open var containedRootViewController: UIViewController?
-    private(set) open var sizesViewController: SizesViewController?
+    public let sizesViewController = SizesViewController()
     
     override open var rootViewController: UIViewController? {
-        didSet {
-            if let rootVC = rootViewController, !rootVC.isKind(of: SizesViewController.self) {
-                let root = SizesViewController()
-                sizesViewController = root
-                rootViewController = root
-                containedRootViewController = rootVC
-                root.contain(viewController: rootVC)
+        get {
+            return sizesViewController.containedController
+        }
+        set {
+            guard let root = newValue, !root.isKind(of: SizesViewController.self) else {
+                return
             }
+            super.rootViewController = sizesViewController
+            sizesViewController.contain(viewController: root)
         }
     }
 }

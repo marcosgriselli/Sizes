@@ -22,15 +22,8 @@ class Tests: XCTestCase {
         window.rootViewController = UIViewController()
         
         XCTAssertNotNil(window.rootViewController)
-        XCTAssertNotNil(window.sizesViewController)
-        XCTAssertNotNil(window.containedRootViewController)
         
-        guard type(of: window.rootViewController!) == SizesViewController.self else {
-            XCTFail()
-            return
-        }
-        
-        guard type(of: window.containedRootViewController!) == UIViewController.self else {
+        guard type(of: window.rootViewController!) == UIViewController.self else {
             XCTFail()
             return
         }
