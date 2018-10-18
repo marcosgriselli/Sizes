@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.makeKeyAndVisible()
             /// Automatically present the Sizes configuration sheet if we're running UITests.
             if CommandLine.arguments.contains("-uitest") {
-//                (window as! SizesWindow).sizesViewController.presentConfiguration()
+                (window as! SizesWindow).presentConfiguration()
             }
         #endif
         

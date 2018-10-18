@@ -69,7 +69,7 @@ open class SizesWindow: UIWindow {
     }
 
     /// Manually present the configuration view
-    private func presentConfiguration() {
+    public func presentConfiguration() {
         let frame = configurationWindow.frame
         DispatchQueue.main.async { [unowned self] in
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.75, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
