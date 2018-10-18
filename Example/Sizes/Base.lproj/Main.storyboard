@@ -34,31 +34,42 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Icq-wu-H3o">
-                                                <rect key="frame" x="20" y="48.5" width="313" height="143.5"/>
+                                                <rect key="frame" x="20" y="48.5" width="313" height="177"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📱 Resize your app to multiple devices" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVX-Km-Gtd">
-                                                        <rect key="frame" x="0.0" y="0.0" width="313" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="313" height="25.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📐 View different orientations" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Riw-Tc-7Er">
-                                                        <rect key="frame" x="0.0" y="30.5" width="313" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="35.5" width="313" height="25"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🔠 Display different font sizes, including accessibility ones" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWK-qj-XdB">
-                                                        <rect key="frame" x="0.0" y="61" width="313" height="42.5"/>
+                                                        <rect key="frame" x="0.0" y="70.5" width="313" height="52.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4My-PX-Q7X">
-                                                        <rect key="frame" x="0.0" y="113.5" width="313" height="30"/>
-                                                        <state key="normal" title="Present"/>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4My-PX-Q7X">
+                                                        <rect key="frame" x="0.0" y="133" width="313" height="44"/>
+                                                        <color key="backgroundColor" red="0.56422978639999999" green="0.077530883250000002" blue="0.99607580900000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="K4c-IM-LIv"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Present">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="presentTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="c9g-Ap-HHt"/>
+                                                            <segue destination="NsV-hQ-RZM" kind="presentation" id="OSp-pJ-NPd"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -100,6 +111,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1809" y="27"/>
+        </scene>
+        <!--Present View Controller-->
+        <scene sceneID="XNV-rN-ZDD">
+            <objects>
+                <viewController id="NsV-hQ-RZM" customClass="PresentViewController" customModule="Sizes_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wpf-Gn-i71"/>
+                        <viewControllerLayoutGuide type="bottom" id="VoV-wl-mcF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tqa-G5-F6b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmT-L3-SCd">
+                                <rect key="frame" x="47" y="311.5" width="281" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="5vS-QO-6O8"/>
+                                </constraints>
+                                <state key="normal" title="Dismiss">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onDismiss:" destination="NsV-hQ-RZM" eventType="touchUpInside" id="Q9v-9c-uLd"/>
+                                    <action selector="presentTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ukk-ov-egq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KmT-L3-SCd" firstAttribute="centerX" secondItem="tqa-G5-F6b" secondAttribute="centerX" id="93O-9Z-cg3"/>
+                            <constraint firstItem="KmT-L3-SCd" firstAttribute="width" secondItem="tqa-G5-F6b" secondAttribute="width" multiplier="75%" id="ZH1-lv-jnz"/>
+                            <constraint firstItem="KmT-L3-SCd" firstAttribute="centerY" secondItem="tqa-G5-F6b" secondAttribute="centerY" id="m6W-Lv-TE3"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OCD-Qi-823" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2540" y="27"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yTX-Hn-vxH">

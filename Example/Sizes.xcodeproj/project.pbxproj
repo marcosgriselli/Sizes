@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		C98A470F60561190B231D996 /* Pods_Sizes_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CD9ED3AD462901E10F812A /* Pods_Sizes_Tests.framework */; };
+		FB03B9A22178C2D300A889FC /* PresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB03B9A12178C2D300A889FC /* PresentViewController.swift */; };
 		FB230DF4216947EA00CC1D82 /* Sizes_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB230DF3216947EA00CC1D82 /* Sizes_ExampleUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		9B77CFB1D7DC9172C875F99F /* Pods-Sizes_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sizes_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sizes_Tests/Pods-Sizes_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		BAA35FF65E8C54C57D8170D3 /* Sizes.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Sizes.podspec; path = ../Sizes.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C03D3993D1015065CD903D53 /* Pods-Sizes_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sizes_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sizes_Example/Pods-Sizes_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		FB03B9A12178C2D300A889FC /* PresentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentViewController.swift; sourceTree = "<group>"; };
 		FB230DF1216947EA00CC1D82 /* Sizes_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sizes_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB230DF3216947EA00CC1D82 /* Sizes_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes_ExampleUITests.swift; sourceTree = "<group>"; };
 		FB230DF5216947EA00CC1D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				FB03B9A12178C2D300A889FC /* PresentViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -388,6 +391,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				FB03B9A22178C2D300A889FC /* PresentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
