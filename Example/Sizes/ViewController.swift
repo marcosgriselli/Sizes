@@ -8,4 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {}
+class ViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            let v = UIViewController()
+            v.view.backgroundColor = .red
+            self.present(v, animated: true)
+        }
+    }
+}
