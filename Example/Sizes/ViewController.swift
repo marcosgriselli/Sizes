@@ -10,12 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            let v = UIViewController()
-            v.view.backgroundColor = .red
-            self.present(v, animated: true)
+    @IBAction func presentTapped(_ sender: UIButton) {
+        let v = UIViewController()
+        v.view.backgroundColor = .red
+        DispatchQueue.main.async {
+            self.present(v, animated: true, completion: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+                    v.dismiss(animated: true)
+                })
+            })
         }
     }
 }

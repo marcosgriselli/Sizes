@@ -34,7 +34,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Icq-wu-H3o">
-                                                <rect key="frame" x="20" y="48.5" width="313" height="103.5"/>
+                                                <rect key="frame" x="20" y="48.5" width="313" height="143.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📱 Resize your app to multiple devices" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVX-Km-Gtd">
                                                         <rect key="frame" x="0.0" y="0.0" width="313" height="20.5"/>
@@ -54,6 +54,13 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4My-PX-Q7X">
+                                                        <rect key="frame" x="0.0" y="113.5" width="313" height="30"/>
+                                                        <state key="normal" title="Present"/>
+                                                        <connections>
+                                                            <action selector="presentTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="c9g-Ap-HHt"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -100,6 +107,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="tZA-0f-EzA" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qun-ei-Dek">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

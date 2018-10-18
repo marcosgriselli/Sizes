@@ -29,6 +29,14 @@ open class SizesViewController: UIViewController {
     /// Scales the contained view when the device to layout is larger than the device than is currently running Sizes
     public var scalesViewIfNecessary: Bool = true
     
+    open override var shouldAutorotate: Bool {
+        return true
+    }
+    
+    open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.all
+    }
+    
     /// Performs layout for selected device, orientation and content size.
     ///
     /// - Parameters:
