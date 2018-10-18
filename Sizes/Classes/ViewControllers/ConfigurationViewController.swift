@@ -63,6 +63,16 @@ internal class ConfigurationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        /// TODO: - Create UIStyle
+        view.layer.cornerRadius = 12.0
+        if #available(iOS 11.0, *) {
+            view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        }
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 0.15
+        view.layer.shadowRadius = 4
+        view.layer.shadowOffset = CGSize(width: 0, height: -2)
+
         /// Setup
         orientationSection.isHidden = !UIApplication.shared.supportsPortraitAndLandscape
         set(devices: supportedDevices)
@@ -71,7 +81,7 @@ internal class ConfigurationViewController: UIViewController {
         panGesture.delegate = self
 
         /// TODO: - Use a better approach.
-        view.transform = CGAffineTransform(translationX: 0, y: view.bounds.height)
+//        view.transform = CGAffineTransform(translationX: 0, y: view.bounds.height)
     }
     
     /// Set the available devices on screen
