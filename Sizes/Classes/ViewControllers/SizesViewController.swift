@@ -118,6 +118,13 @@ open class SizesViewController: UIViewController {
     ///
     /// - Parameter viewController: view controller to be modified by Sizes
     public func contain(viewController: UIViewController) {
+      
+        // Remove contained view controller if necessary (fixes #19)
+        if let containedController = containedController {
+            containedView.removeFromSuperview()
+            containedController.didMove(toParent: nil)
+        }
+      
         addChild(viewController)
         let childView = viewController.view!
         containedView = childView
