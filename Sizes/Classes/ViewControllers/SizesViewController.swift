@@ -122,7 +122,7 @@ open class SizesViewController: UIViewController {
         // Remove contained view controller if necessary (fixes #19)
         if let containedController = containedController {
             containedView.removeFromSuperview()
-            containedController.didMove(toParent: nil)
+            containedController.removeFromParent()
         }
       
         addChild(viewController)
