@@ -34,54 +34,58 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Icq-wu-H3o">
-                                                <rect key="frame" x="20" y="48.5" width="313" height="177"/>
+                                                <rect key="frame" x="20" y="48.5" width="313" height="103.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📱 Resize your app to multiple devices" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVX-Km-Gtd">
-                                                        <rect key="frame" x="0.0" y="0.0" width="313" height="25.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="313" height="20.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📐 View different orientations" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Riw-Tc-7Er">
-                                                        <rect key="frame" x="0.0" y="35.5" width="313" height="25"/>
+                                                        <rect key="frame" x="0.0" y="30.5" width="313" height="20.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🔠 Display different font sizes, including accessibility ones" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWK-qj-XdB">
-                                                        <rect key="frame" x="0.0" y="70.5" width="313" height="52.5"/>
+                                                        <rect key="frame" x="0.0" y="61" width="313" height="42.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4My-PX-Q7X">
-                                                        <rect key="frame" x="0.0" y="133" width="313" height="44"/>
-                                                        <color key="backgroundColor" red="0.56422978639999999" green="0.077530883250000002" blue="0.99607580900000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="44" id="K4c-IM-LIv"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Present">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="4"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <segue destination="NsV-hQ-RZM" kind="presentation" id="OSp-pJ-NPd"/>
-                                                        </connections>
-                                                    </button>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4My-PX-Q7X">
+                                                <rect key="frame" x="20" y="160" width="335" height="44"/>
+                                                <color key="backgroundColor" red="0.56422978639999999" green="0.077530883250000002" blue="0.99607580900000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="K4c-IM-LIv"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                                <state key="normal" title="Present">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="NsV-hQ-RZM" kind="presentation" id="OSp-pJ-NPd"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="MiB-Bu-Uih" firstAttribute="leading" secondItem="fDp-cD-PuC" secondAttribute="leading" constant="20" symbolic="YES" id="0jq-0A-9na"/>
+                                            <constraint firstItem="4My-PX-Q7X" firstAttribute="leading" secondItem="fDp-cD-PuC" secondAttribute="leading" constant="20" symbolic="YES" id="1sh-56-GdA"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4My-PX-Q7X" secondAttribute="bottom" constant="20" symbolic="YES" id="2ll-HW-lfZ"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Icq-wu-H3o" secondAttribute="trailing" constant="20" symbolic="YES" id="4HJ-Vn-46L"/>
-                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Icq-wu-H3o" secondAttribute="bottom" constant="20" symbolic="YES" id="4ma-l5-vWS"/>
                                             <constraint firstItem="Icq-wu-H3o" firstAttribute="leading" secondItem="MiB-Bu-Uih" secondAttribute="leading" id="5fD-Ng-gXL"/>
+                                            <constraint firstItem="4My-PX-Q7X" firstAttribute="top" secondItem="Icq-wu-H3o" secondAttribute="bottom" constant="8" symbolic="YES" id="AX8-gC-fsP"/>
                                             <constraint firstItem="MiB-Bu-Uih" firstAttribute="top" secondItem="fDp-cD-PuC" secondAttribute="top" constant="20" symbolic="YES" id="JW0-b8-PvK"/>
+                                            <constraint firstAttribute="trailing" secondItem="4My-PX-Q7X" secondAttribute="trailing" constant="20" symbolic="YES" id="VbR-gA-YFf"/>
                                             <constraint firstItem="Icq-wu-H3o" firstAttribute="top" secondItem="MiB-Bu-Uih" secondAttribute="bottom" constant="8" symbolic="YES" id="fE9-Th-vDb"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MiB-Bu-Uih" secondAttribute="trailing" constant="20" symbolic="YES" id="zxo-Sa-9Kz"/>
                                         </constraints>
