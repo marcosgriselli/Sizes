@@ -52,6 +52,14 @@ internal class ConfigurationViewController: UIViewController {
     /// Update layout closure
     var update: ((Orientation, Device, UIContentSizeCategory) -> Void)?
     
+    open override var shouldAutorotate: Bool {
+        return true
+    }
+    
+    open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.all
+    }
+    
     init() {
         super.init(nibName: String(describing: ConfigurationViewController.self),
                    bundle: Bundle(for: ConfigurationViewController.self))
@@ -63,15 +71,19 @@ internal class ConfigurationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        /// TODO: - Create UIStyle
+        view.layer.cornerRadius = 12.0
+        if #available(iOS 11.0, *) {
+            view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        }
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 0.15
+        view.layer.shadowRadius = 4
+        view.layer.shadowOffset = CGSize(width: 0, height: -2)
+
         /// Setup
         orientationSection.isHidden = !UIApplication.shared.supportsPortraitAndLandscape
         set(devices: supportedDevices)
-        
-        panGesture.cancelsTouchesInView = false
-        panGesture.delegate = self
-
-        /// TODO: - Use a better approach.
-        view.transform = CGAffineTransform(translationX: 0, y: view.bounds.height)
     }
     
     /// Set the available devices on screen
@@ -117,39 +129,5 @@ internal class ConfigurationViewController: UIViewController {
             .compactMap { $0 as? Button }
             .forEach { $0.set(style: .normal) }
         button.set(style: .selected)
-    }
-
-    @IBAction func dragged(_ sender: UIPanGestureRecognizer) {
-        let translation = sender.translation(in: view)
-        switch sender.state {
-        case .changed:
-            if translation.y > 0 {
-            view.transform = CGAffineTransform(translationX: 0, y: translation.y)
-            }
-        case .cancelled, .ended:
-            /// TODO: - Add rubber-banding + force release.
-            let percentageComplete = translation.y / view.bounds.height
-            let shouldDismiss = percentageComplete > 0.5
-            let yMovement = shouldDismiss ? view.bounds.height : 0
-            UIView.animate(withDuration: 0.3, animations: {
-                self.view.transform = CGAffineTransform(translationX: 0, y: yMovement)
-            }, completion: nil)
-        default: break
-        }
-    }
-}
-
-// MARK: - UIGestureRecognizerDelegate
-extension ConfigurationViewController: UIGestureRecognizerDelegate {
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        guard let view = touch.view else {
-            return true
-        }
-        
-        return !view.isKind(of: UIButton.self)
-    }
-    
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return false
     }
 }
