@@ -52,6 +52,9 @@ internal class ConfigurationViewController: UIViewController {
     /// Update layout closure
     var update: ((Orientation, Device, UIContentSizeCategory) -> Void)?
     
+    // Take Screenshot closure
+    var takeScreenshot: (() -> Void)?
+    
     open override var shouldAutorotate: Bool {
         return true
     }
@@ -122,6 +125,10 @@ internal class ConfigurationViewController: UIViewController {
         let textSize = textSizes[Int(sender.value)]
         textSizeLabel.text = textSize.rawValue
         selectedTextSize = textSize
+    }
+    
+    @IBAction func takeScreenshot(_ sender: Any) {
+        takeScreenshot?()
     }
     
     private func select(button: Button, from stackView: UIStackView) {

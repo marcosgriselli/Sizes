@@ -15,6 +15,7 @@
 		3AFDE0F591830BD7EE756ECB840E2164 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		51ECA41D505694BFF5510587139625C5 /* ConfigurationViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = C46D6CC18B5613A1D52845CCC8C027F3 /* ConfigurationViewController.xib */; };
 		54F5535135089B81749FAD4782CE9D6D /* Sizes-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E8B0F6D98E81647A59595D3C45BC58C /* Sizes-dummy.m */; };
+		5DCA27B3217D2AC20067EE67 /* UIView + Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4DE87217D238800BA3C6F /* UIView + Util.swift */; };
 		65DA48EA620F145052085D659AD90A0F /* Pods-Sizes_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DB98984468ED0D329A041618AC4171E0 /* Pods-Sizes_Tests-dummy.m */; };
 		725297DC00C531B210CE257EE909DA4D /* Pods-Sizes_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CBB0A69C4D39E9FC1C812CE97F6CC02 /* Pods-Sizes_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7B8A528788ED06B3CED20F2A0F776E25 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6704180F1946056A31EA3FB1651619C /* Device.swift */; };
@@ -67,6 +68,7 @@
 		57F223FAA8D8C5477C19B81BC3BE1D2A /* Pods-Sizes_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Sizes_Example.modulemap"; sourceTree = "<group>"; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5CBB0A69C4D39E9FC1C812CE97F6CC02 /* Pods-Sizes_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Sizes_Example-umbrella.h"; sourceTree = "<group>"; };
+		5DF4DE87217D238800BA3C6F /* UIView + Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Util.swift"; sourceTree = "<group>"; };
 		6AEB1C101487CB9765A164A480496EAC /* Pods-Sizes_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sizes_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		745937463FA3A02F7E474943A9EF67D6 /* Sizes.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = Sizes.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		795F9571891A9BD4A95AA8486E82AB5F /* Sizes.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Sizes.modulemap; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				F7D5F2E5692C411D5DF34349ED965230 /* LayoutFactory.swift */,
 				C152B2483AD6BED3F2A261550B687168 /* UIApplication + Orientations.swift */,
 				A50A1E3E0AD5A2206C752DC47C1DB355 /* UIStackView + Util.swift */,
+				5DF4DE87217D238800BA3C6F /* UIView + Util.swift */,
 			);
 			name = Util;
 			path = Sizes/Classes/Util;
@@ -407,6 +410,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
+				TargetAttributes = {
+					6BC4CD1D35F21419CF686CD09A69CE81 = {
+						LastSwiftMigration = 1000;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -470,6 +478,7 @@
 				B8241CFBF7D048A6B577D4CBCDA5B528 /* ConfigurationViewController.swift in Sources */,
 				51ECA41D505694BFF5510587139625C5 /* ConfigurationViewController.xib in Sources */,
 				FB3FFF7B2173D8BF0039B02D /* Button+Style.swift in Sources */,
+				5DCA27B3217D2AC20067EE67 /* UIView + Util.swift in Sources */,
 				7B8A528788ED06B3CED20F2A0F776E25 /* Device.swift in Sources */,
 				B59C820C05C24ACDE69B1FB5DFCD0C62 /* Layout.swift in Sources */,
 				EBEFBC3A93E825A55C8E41877A7B04A5 /* LayoutFactory.swift in Sources */,
@@ -547,6 +556,7 @@
 			baseConfigurationReference = 4963858564006266D3E14D0A3FDD308F /* Pods-Sizes_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -571,6 +581,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -617,6 +628,7 @@
 			baseConfigurationReference = 2C9907CEC6128D58DB1C01B20BB5B3CC /* Pods-Sizes_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -642,6 +654,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

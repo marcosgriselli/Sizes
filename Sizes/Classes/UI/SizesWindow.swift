@@ -48,6 +48,10 @@ open class SizesWindow: UIWindow {
         configurationController.update = { [unowned self] orientation, device, textSize in
             self.sizesViewController.debug(device: device, orientation: orientation, contentSize: textSize)
         }
+        configurationController.takeScreenshot = { [unowned self] in
+            let screenshot = self.sizesViewController.containedController!.view!.asImage()
+            self.shareImage(screenshot)
+        }
         
         panGesture = UIPanGestureRecognizer(target: self, action: #selector(dragged(_:)))
         configurationWindow.addGestureRecognizer(panGesture)
@@ -96,6 +100,16 @@ open class SizesWindow: UIWindow {
             }, completion: nil)
         default: break
         }
+    }
+    
+    private func shareImage(_ image: UIImage) {
+        // set up activity view controller
+        let imageToShare = [image]
+        let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.sizesViewController.view // so that iPads won't crash
+        
+        // present the view controller
+        self.sizesViewController.present(activityViewController, animated: true, completion: nil)
     }
 }
 
