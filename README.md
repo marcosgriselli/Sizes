@@ -41,7 +41,7 @@ pod 'Sizes'
 Edit your `Cartfile` and specify the dependency:
 
 ```bash
-github 'marcosgriselli/Sizes'
+github "marcosgriselli/Sizes"
 ```
 
 ## 👩‍💻 How to use
