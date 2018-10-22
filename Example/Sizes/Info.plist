@@ -37,5 +37,7 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>We need to access the Photo Library for storing the captured screenshots</string>
 </dict>
 </plist>

@@ -48,6 +48,28 @@ open class SizesWindow: UIWindow {
         configurationController.update = { [unowned self] orientation, device, textSize in
             self.sizesViewController.debug(device: device, orientation: orientation, contentSize: textSize)
         }
+        configurationController.takeScreenshot = { [unowned self] in
+            guard let view = self.sizesViewController.containedController?.view else {
+                return
+            }
+            //take the screenshot
+            let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
+            let image = renderer.image { _ in view.drawHierarchy(in: view.bounds, afterScreenUpdates: true) }
+
+            //remove the Configuration view
+            self.dismissConfiguration()
+
+            //configure and present the share controller
+            let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+            var excluded = [UIActivity.ActivityType.assignToContact]
+            //If info.plist does not have declared that it supports adding to Photo Library, remove the share option
+            if Bundle.main.object(forInfoDictionaryKey: "NSPhotoLibraryUsageDescription") == nil {
+                print("To enable save to Camera Roll add NSPhotoLibraryUsageDescription in your info.plist")
+                excluded.append(UIActivity.ActivityType.saveToCameraRoll)
+            }
+            activityViewController.excludedActivityTypes = excluded
+            self.rootViewController?.present(activityViewController, animated: true, completion: nil)
+        }
         
         panGesture = UIPanGestureRecognizer(target: self, action: #selector(dragged(_:)))
         configurationWindow.addGestureRecognizer(panGesture)
@@ -77,7 +99,24 @@ open class SizesWindow: UIWindow {
             }, completion: nil)
         }
     }
+
+
+    /// Dismiss the configuration view
+    public func dismissConfiguration() {
+        moveConfigurationFrame(toY: UIScreen.main.bounds.height, animated: true)
+    }
     
+    fileprivate func moveConfigurationFrame(toY yMovement: CGFloat, animated: Bool) {
+        let setNewPosistion = { self.configurationWindow.frame.origin.y = yMovement }
+
+        if animated {
+            UIView.animate(withDuration: 0.3, animations: setNewPosistion, completion: nil)
+        }
+        else {
+            setNewPosistion()
+        }
+    }
+
     @objc func dragged(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: sender.view)
         let velocity = sender.velocity(in: sender.view)
@@ -89,14 +128,18 @@ open class SizesWindow: UIWindow {
             }
         case .cancelled, .ended:
             let percentageComplete = translation.y / configurationWindow.frame.height
-            let shouldDismiss = percentageComplete > 0.5 || velocity.y > 10
-            let yMovement = shouldDismiss ? UIScreen.main.bounds.height : UIScreen.main.bounds.height - configurationWindow.frame.height
-            UIView.animate(withDuration: 0.3, animations: {
-                self.configurationWindow.frame.origin.y = yMovement
-            }, completion: nil)
+            if percentageComplete > 0.5 || velocity.y > 10 {
+                dismissConfiguration()
+            }
+            else {
+                moveConfigurationFrame(toY: UIScreen.main.bounds.height - configurationWindow.frame.height,
+                                  animated: true)
+            }
         default: break
         }
     }
+
+//    private func animate
 }
 
 // MARK: - UIGestureRecognizerDelegate
