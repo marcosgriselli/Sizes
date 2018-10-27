@@ -37,7 +37,7 @@ open class SizesWindow: UIWindow {
         let configurationController = ConfigurationViewController()
         let screenBounds = UIScreen.main.bounds
         let configurationViewHeight = configurationController.view.bounds.height
-        configurationWindow = UIWindow(frame: CGRect(x: 0, y: screenBounds.height, width: 375, height: configurationViewHeight))
+        configurationWindow = UIWindow(frame: CGRect(x: 0, y: screenBounds.height, width: screenBounds.width, height: configurationViewHeight))
         configurationWindow.backgroundColor = .clear
         configurationWindow.windowLevel = .alert
         configurationWindow.rootViewController = configurationController
