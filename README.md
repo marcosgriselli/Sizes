@@ -1,4 +1,4 @@
-<img width="100%" style="margin: 0 0 0 -20px" src="https://cdn.rawgit.com/marcosgriselli/Sizes/92ced2ee616420c03911883df4d26649ab2317aa/Assets/sizes.svg"/>
+<img width="100%" style="margin: 0 0 0 -20px" src="https://cdn.jsdelivr.net/gh/marcosgriselli/Sizes@92ced2ee616420c03911883df4d26649ab2317aa/Assets/sizes.svg"/>
 
 ![Version](https://img.shields.io/cocoapods/v/Sizes.svg)
 ![Swift 4.1](https://img.shields.io/badge/Swift-4.2-orange.svg)
@@ -11,7 +11,7 @@ Sizes reduces the time it takes to evaluate all of our apps possible device size
 
 ## 📱 Sizes in action
 
-<img src="https://cdn.rawgit.com/marcosgriselli/Sizes/92ced2ee616420c03911883df4d26649ab2317aa/Assets/sizes_short.gif"/>
+<img src="https://cdn.jsdelivr.net/gh/marcosgriselli/Sizes@92ced2ee616420c03911883df4d26649ab2317aa/Assets/sizes_short.gif"/>
 
 *Recorded on an 10.5 inch iPad Pro*
 
@@ -62,7 +62,7 @@ label.adjustsFontForContentSizeCategory = true
 
 **IB/Storyboard:**
 
-<img src="https://cdn.rawgit.com/marcosgriselli/Sizes/92ced2ee616420c03911883df4d26649ab2317aa/Assets/inspector.png"/>
+<img src="https://cdn.jsdelivr.net/gh/marcosgriselli/Sizes@92ced2ee616420c03911883df4d26649ab2317aa/Assets/inspector.png"/>
 
 ### Setup
 
@@ -85,7 +85,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 Shake to display the Sizes configuration UI, then tap on one of the orientation/device options to trigger a change. Or update the Text size slider to navigate through the different font sizes, you'll get the font name as you slide. You can check a longer video implementation and some of the use cases of Sizes in [this tweet](https://twitter.com/marcosgriselli/status/1038459645596250114)
 
-<img width="200px" src="https://cdn.rawgit.com/marcosgriselli/Sizes/92ced2ee616420c03911883df4d26649ab2317aa/Assets/example.jpeg"/>
+<img width="200px" src="https://cdn.jsdelivr.net/gh/marcosgriselli/Sizes@92ced2ee616420c03911883df4d26649ab2317aa/Assets/example.jpeg"/>
 
 
 ## 🛣 Roadmap
