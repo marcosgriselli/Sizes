@@ -106,6 +106,7 @@ See [all contributors](https://github.com/marcosgriselli/Sizes/graphs/contributo
 - [AppCoda Weekly](http://digest.appcoda.com/issues/appcoda-weekly-issue-92-137765)
 - [iOS Dev Weekly](https://iosdevweekly.com/issues/373#tools) 
 - [Swift Weekly](http://digest.swiftweekly.com/issues/swift-weekly-issue-133-138916)
+- [Indie iOS Focus Weekly](https://indieiosfocus.com/issues/196)
 
 ## 👨‍💻 Author
 Marcos Griselli | <a href="url"><img src="https://cdn.rawgit.com/marcosgriselli/ViewAnimator/cf065e96/Resources/twitterLogo.svg" height="17"></a> [@marcosgriselli](https://twitter.com/marcosgriselli)
