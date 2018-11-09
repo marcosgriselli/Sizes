@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window = SizesWindow()
             window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!
             window?.makeKeyAndVisible()
-            /// Automatically present the Sizes configuration sheet if we're running UITests.
+//            /// Automatically present the Sizes configuration sheet if we're running UITests.
             if CommandLine.arguments.contains("-uitest") {
                 (window as! SizesWindow).presentConfiguration()
             }

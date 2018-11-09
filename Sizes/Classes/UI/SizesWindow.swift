@@ -48,7 +48,7 @@ open class SizesWindow: UIWindow {
         configurationController.update = { [unowned self] orientation, device, textSize in
             self.sizesViewController.debug(device: device, orientation: orientation, contentSize: textSize)
         }
-        configurationController.takeScreenshot = { [unowned self] in
+        configurationController.onScreenshot = { [unowned self] in
             if let screenshot = self.sizesViewController.generateScreenshot() {
                 self.shareImage(screenshot)
             }
@@ -110,7 +110,7 @@ open class SizesWindow: UIWindow {
 
         //If info.plist does not have declared that it supports adding to Photo Library, remove the share option
         if Bundle.main.object(forInfoDictionaryKey: "NSPhotoLibraryAddUsageDescription") == nil {
-            print("To enable save to Camera Roll add NSPhotoLibraryAddUsageDescription in your info.plist")
+            print("📄 To enable save to Camera Roll add NSPhotoLibraryAddUsageDescription in your Info.plist")
             activityViewController.excludedActivityTypes = [UIActivity.ActivityType.saveToCameraRoll]
         }
         
@@ -119,6 +119,7 @@ open class SizesWindow: UIWindow {
 
         activityViewController.popoverPresentationController?.sourceView = containerController.view // so that iPads won't crash
 
+        /// We create a fullscreen temporal window so the share UI is presented on it instead of on the resized one.
         let shareWindow = UIWindow(frame: UIScreen.main.bounds)
         shareWindow.backgroundColor = .clear
         shareWindow.windowLevel = .alert
@@ -128,8 +129,6 @@ open class SizesWindow: UIWindow {
         activityViewController.completionWithItemsHandler = { _, _, _, _ in
             shareWindow.removeFromSuperview()
         }
-        // present the view controller
-//        sizesViewController.present(activityViewController, animated: true, completion: nil)
         containerController.present(activityViewController, animated: true)
     }
 }

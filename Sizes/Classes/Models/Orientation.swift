@@ -8,7 +8,7 @@
 import UIKit
 
 /// Orientation of the device. We're not supporting all the orientations for now.
-internal enum Orientation {
+internal enum Orientation: Int, CaseIterable {
     case portrait
     case landscape
     

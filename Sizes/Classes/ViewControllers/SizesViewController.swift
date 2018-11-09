@@ -117,6 +117,7 @@ open class SizesViewController: UIViewController {
     
     internal func generateScreenshot() -> UIImage? {
         guard let layout = currentLayout, let contained = containedController else {
+            print("📸 You are trying to take a screenshot of the default layout. We suggest you use the device screenshot functionality for that.")
             return nil
         }
         return contained.view.asImage(traits: layout.traits)
