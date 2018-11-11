@@ -43,21 +43,30 @@ internal class ConfigurationViewController: UIViewController {
     
     /// TODO: - Select available font sizes.
     /// Devices to be listed on the configuration view
-    var supportedDevices: [Device] = Device.allCases {
+    internal var supportedDevices: [Device] = Device.allCases {
         didSet {
             set(devices: supportedDevices)
         }
     }
     
     /// Available content size categories
-    let textSizes: [UIContentSizeCategory] = [.extraSmall, .small, .medium, .large, .extraLarge, .extraExtraLarge, .extraExtraExtraLarge, .accessibilityMedium, .accessibilityLarge, .accessibilityExtraLarge, .accessibilityExtraExtraLarge, .accessibilityExtraExtraExtraLarge]
+    private let textSizes: [UIContentSizeCategory] = [.extraSmall, .small, .medium, .large, .extraLarge, .extraExtraLarge, .extraExtraExtraLarge, .accessibilityMedium, .accessibilityLarge, .accessibilityExtraLarge, .accessibilityExtraExtraLarge, .accessibilityExtraExtraExtraLarge]
     
     /// Update layout closure
-    var update: ((Orientation, Device, UIContentSizeCategory) -> Void)?
+    internal var update: ((Orientation, Device, UIContentSizeCategory) -> Void)?
     
     /// On screenshot tap closure
-    var onScreenshot: (() -> Void)?
-    var onPin: ((Bool) -> Void)?
+    internal var onScreenshot: (() -> Void)?
+    
+    /// On pin to top closure
+    internal var onPin: ((Bool) -> Void)?
+    
+    internal var onLayout: (() -> Void)?
+    
+    internal var containerViewSize: CGSize {
+        return CGSize(width: backgroundView.frame.width,
+                      height: backgroundView.frame.height + 10)
+    }
     
     open override var shouldAutorotate: Bool {
         return true
@@ -113,6 +122,11 @@ internal class ConfigurationViewController: UIViewController {
             contentCategorySlider.value = Float(index)
             updateText(contentCategorySlider)
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        onLayout?()
     }
     
     /// Set the available devices on screen
