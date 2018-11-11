@@ -23,6 +23,7 @@ class Sizes_ExampleUITests: XCTestCase {
         let app = XCUIApplication()
         app.launchArguments = ["-uitest"]
         app.launch()
+        app.buttons["device-option"].tap()
         let elementsQuery = app.scrollViews.otherElements
         elementsQuery.buttons["iPhone 4s"].tap()
         elementsQuery.buttons["iPhone 5s"].tap()
@@ -39,6 +40,7 @@ class Sizes_ExampleUITests: XCTestCase {
         let app = XCUIApplication()
         app.launchArguments = ["-uitest"]
         app.launch()
+        app.buttons["orientation-option"].tap()
         app.buttons["landscape"].tap()
         app.buttons["portrait"].tap()
     }
@@ -47,6 +49,7 @@ class Sizes_ExampleUITests: XCTestCase {
         let app = XCUIApplication()
         app.launchArguments = ["-uitest"]
         app.launch()
+        app.buttons["contentCategory-option"].tap()
         app.sliders["fontSlider"].adjust(toNormalizedSliderPosition: 1)
         app.sliders["fontSlider"].adjust(toNormalizedSliderPosition: 0)
     }

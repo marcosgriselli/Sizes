@@ -26,6 +26,8 @@ open class SizesViewController: UIViewController {
     
     private var currentLayout: Layout?
     
+    internal var pinsViewToTop = false
+    
     /// MARK: - Public API
     
     /// Scales the contained view when the device to layout is larger than the device than is currently running Sizes
@@ -80,6 +82,9 @@ open class SizesViewController: UIViewController {
         }
 
         sizesWindow.center = CGPoint(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.midY)
+        if pinsViewToTop {
+            sizesWindow.frame.origin.y = 0
+        }
     }
     
     /// Contain the passed view controller to resize it and modify its traits

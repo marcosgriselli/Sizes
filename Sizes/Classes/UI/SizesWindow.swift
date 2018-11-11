@@ -17,6 +17,8 @@ open class SizesWindow: UIWindow {
     
     private var panGesture: UIPanGestureRecognizer!
     
+    private var isShowingConfiguration = false
+    
     /// Public API
     open var shakeGestureEnabled: Bool = true
     
@@ -38,10 +40,11 @@ open class SizesWindow: UIWindow {
         let screenBounds = UIScreen.main.bounds
         let configurationViewHeight = configurationController.view.bounds.height
         configurationWindow = UIWindow(frame: CGRect(x: 0, y: screenBounds.height, width: screenBounds.width, height: configurationViewHeight))
+        configurationWindow.autoresizingMask = .flexibleHeight
+        configurationWindow.frame.origin.y = screenBounds.height
         configurationWindow.backgroundColor = .clear
         configurationWindow.windowLevel = .alert
         configurationWindow.rootViewController = configurationController
-        configurationWindow.makeKeyAndVisible()
         
         super.init(frame: UIScreen.main.bounds)
         clipsToBounds = true
@@ -53,7 +56,22 @@ open class SizesWindow: UIWindow {
                 self.shareImage(screenshot)
             }
         }
-        
+        configurationController.onPin = { [unowned self] enabled in
+            self.sizesViewController.pinsViewToTop = enabled
+            if enabled {
+                self.frame.origin.y = 0
+            } else {
+                self.center.y = UIScreen.main.bounds.midY
+            }
+        }
+        configurationController.onLayout = { [weak self] in
+            guard let self = self else { return }
+            self.configurationWindow.frame.size = CGSize(width: UIScreen.main.bounds.width, height: configurationController.containerViewSize.height)
+            if self.isShowingConfiguration {
+                self.configurationWindow.frame.origin.y = UIScreen.main.bounds.height - self.configurationWindow.frame.size.height
+            }
+        }
+        configurationController.view.layoutIfNeeded()
         panGesture = UIPanGestureRecognizer(target: self, action: #selector(dragged(_:)))
         configurationWindow.addGestureRecognizer(panGesture)
         panGesture.cancelsTouchesInView = false
@@ -75,11 +93,15 @@ open class SizesWindow: UIWindow {
 
     /// Manually present the configuration view
     public func presentConfiguration() {
-        let frame = configurationWindow.frame
+        // TODO: - Fix initial animation
+        configurationWindow.makeKeyAndVisible()
+        let configurationSize = configurationWindow.frame.size
         DispatchQueue.main.async { [unowned self] in
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.75, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
-                self.configurationWindow.frame.origin.y = UIScreen.main.bounds.height - frame.height
-            }, completion: nil)
+                self.configurationWindow.frame.origin.y = UIScreen.main.bounds.height - configurationSize.height
+            }, completion: { [weak self] _ in
+                self?.isShowingConfiguration = true
+            })
         }
     }
     
@@ -98,7 +120,13 @@ open class SizesWindow: UIWindow {
             let yMovement = shouldDismiss ? UIScreen.main.bounds.height : UIScreen.main.bounds.height - configurationWindow.frame.height
             UIView.animate(withDuration: 0.3, animations: {
                 self.configurationWindow.frame.origin.y = yMovement
-            }, completion: nil)
+            }, completion: { [unowned self] _ in
+                if shouldDismiss {
+                    self.configurationWindow.resignKey()
+                    self.isShowingConfiguration = false
+                    self.makeKey()
+                }
+            })
         default: break
         }
     }

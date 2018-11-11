@@ -28,4 +28,11 @@ class Tests: XCTestCase {
             return
         }
     }
+    
+    func testSizesWindowResignsKey() {
+        let window = SizesWindow()
+        window.rootViewController = UIViewController()
+        window.presentConfiguration()
+        XCTAssertFalse(window.isKeyWindow, "Sizes window is not resigning key window.")
+    }
 }

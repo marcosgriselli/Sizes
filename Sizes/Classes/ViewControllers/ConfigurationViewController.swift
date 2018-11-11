@@ -10,11 +10,14 @@ import UIKit
 internal class ConfigurationViewController: UIViewController {
     
     // MARK: - IBOutlets
+    @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var orientationSection: UIView!
     @IBOutlet weak var orientationStackView: UIStackView!
     @IBOutlet weak var deviceStackView: UIStackView!
     @IBOutlet weak var textSizeLabel: UILabel!
     @IBOutlet weak var contentCategorySlider: UISlider!
+    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var optionsStackView: UIStackView!
     
     /// TODO: - Set default correctly.
     /// Selected orientation for layout
@@ -40,20 +43,30 @@ internal class ConfigurationViewController: UIViewController {
     
     /// TODO: - Select available font sizes.
     /// Devices to be listed on the configuration view
-    var supportedDevices: [Device] = Device.allCases {
+    internal var supportedDevices: [Device] = Device.allCases {
         didSet {
             set(devices: supportedDevices)
         }
     }
     
     /// Available content size categories
-    let textSizes: [UIContentSizeCategory] = [.extraSmall, .small, .medium, .large, .extraLarge, .extraExtraLarge, .extraExtraExtraLarge, .accessibilityMedium, .accessibilityLarge, .accessibilityExtraLarge, .accessibilityExtraExtraLarge, .accessibilityExtraExtraExtraLarge]
+    private let textSizes: [UIContentSizeCategory] = [.extraSmall, .small, .medium, .large, .extraLarge, .extraExtraLarge, .extraExtraExtraLarge, .accessibilityMedium, .accessibilityLarge, .accessibilityExtraLarge, .accessibilityExtraExtraLarge, .accessibilityExtraExtraExtraLarge]
     
     /// Update layout closure
-    var update: ((Orientation, Device, UIContentSizeCategory) -> Void)?
+    internal var update: ((Orientation, Device, UIContentSizeCategory) -> Void)?
     
     /// On screenshot tap closure
-    var onScreenshot: (() -> Void)?
+    internal var onScreenshot: (() -> Void)?
+    
+    /// On pin to top closure
+    internal var onPin: ((Bool) -> Void)?
+    
+    internal var onLayout: (() -> Void)?
+    
+    internal var containerViewSize: CGSize {
+        return CGSize(width: backgroundView.frame.width,
+                      height: backgroundView.frame.height + 10)
+    }
     
     open override var shouldAutorotate: Bool {
         return true
@@ -75,18 +88,25 @@ internal class ConfigurationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         /// TODO: - Create UIStyle
-        view.layer.cornerRadius = 12.0
+        backgroundView.layer.cornerRadius = 12.0
         if #available(iOS 11.0, *) {
-            view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+            backgroundView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         }
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOpacity = 0.15
-        view.layer.shadowRadius = 4
-        view.layer.shadowOffset = CGSize(width: 0, height: -2)
+        backgroundView.layer.shadowColor = UIColor.black.cgColor
+        backgroundView.layer.shadowOpacity = 0.15
+        backgroundView.layer.shadowRadius = 4
+        backgroundView.layer.shadowOffset = CGSize(width: 0, height: -2)
 
         /// Setup
-        orientationSection.isHidden = !UIApplication.shared.supportsPortraitAndLandscape
         set(devices: supportedDevices)
+        if !UIApplication.shared.supportsPortraitAndLandscape {
+            if let orientationOption = optionsStackView.arrangedSubviews.first {
+                optionsStackView.removeArrangedSubview(orientationOption)
+                orientationOption.removeFromSuperview()
+                mainStackView.removeArrangedSubview(orientationSection)
+                orientationSection.removeFromSuperview()
+            }
+        }
         
         /// Select correct buttons
         // TODO: - Implement better approach
@@ -102,6 +122,11 @@ internal class ConfigurationViewController: UIViewController {
             contentCategorySlider.value = Float(index)
             updateText(contentCategorySlider)
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        onLayout?()
     }
     
     /// Set the available devices on screen
@@ -146,10 +171,29 @@ internal class ConfigurationViewController: UIViewController {
         onScreenshot?()
     }
     
+    @IBAction func pinActionSelected(_ sender: Button) {
+        // TODO: - Create PIN functionality
+        sender.isSelected.toggle()
+        let style: Button.Style = sender.isSelected ? .selected : .normal
+        sender.set(style: style)
+        onPin?(sender.isSelected)
+    }
     private func select(button: Button, from stackView: UIStackView) {
         stackView.arrangedSubviews
             .compactMap { $0 as? Button }
             .forEach { $0.set(style: .normal) }
         button.set(style: .selected)
+    }
+    
+    @IBAction func selectOption(_ sender: Button) {
+        guard let index = optionsStackView.arrangedSubviews.firstIndex(of: sender) else {
+            return
+        }
+        let newStyle: Button.Style = mainStackView.arrangedSubviews[index].isHidden ? .selected : .normal
+        UIView.animate(withDuration: 0.2) {
+            self.mainStackView.arrangedSubviews[index].isHidden.toggle()
+            sender.set(style: newStyle)
+            self.mainStackView.layoutIfNeeded()
+        }
     }
 }
