@@ -99,8 +99,8 @@ open class SizesWindow: UIWindow {
         DispatchQueue.main.async { [unowned self] in
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.75, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
                 self.configurationWindow.frame.origin.y = UIScreen.main.bounds.height - configurationSize.height
-            }, completion: { [unowned self] _ in
-                self.isShowingConfiguration = true
+            }, completion: { [weak self] _ in
+                self?.isShowingConfiguration = true
             })
         }
     }
