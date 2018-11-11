@@ -57,6 +57,7 @@ internal class ConfigurationViewController: UIViewController {
     
     /// On screenshot tap closure
     var onScreenshot: (() -> Void)?
+    var onPin: ((Bool) -> Void)?
     
     open override var shouldAutorotate: Bool {
         return true
@@ -88,8 +89,15 @@ internal class ConfigurationViewController: UIViewController {
         backgroundView.layer.shadowOffset = CGSize(width: 0, height: -2)
 
         /// Setup
-//        orientationSection.isHidden = !UIApplication.shared.supportsPortraitAndLandscape
         set(devices: supportedDevices)
+        if !UIApplication.shared.supportsPortraitAndLandscape {
+            if let orientationOption = optionsStackView.arrangedSubviews.first {
+                optionsStackView.removeArrangedSubview(orientationOption)
+                orientationOption.removeFromSuperview()
+                mainStackView.removeArrangedSubview(orientationSection)
+                orientationSection.removeFromSuperview()
+            }
+        }
         
         /// Select correct buttons
         // TODO: - Implement better approach
@@ -149,6 +157,13 @@ internal class ConfigurationViewController: UIViewController {
         onScreenshot?()
     }
     
+    @IBAction func pinActionSelected(_ sender: Button) {
+        // TODO: - Create PIN functionality
+        sender.isSelected.toggle()
+        let style: Button.Style = sender.isSelected ? .selected : .normal
+        sender.set(style: style)
+        onPin?(sender.isSelected)
+    }
     private func select(button: Button, from stackView: UIStackView) {
         stackView.arrangedSubviews
             .compactMap { $0 as? Button }

@@ -41,7 +41,7 @@ open class SizesWindow: UIWindow {
         configurationWindow.backgroundColor = .clear
         configurationWindow.windowLevel = .alert
         configurationWindow.rootViewController = configurationController
-        configurationWindow.makeKeyAndVisible()
+//        configurationWindow.makeKeyAndVisible()
         
         super.init(frame: UIScreen.main.bounds)
         clipsToBounds = true
@@ -53,7 +53,14 @@ open class SizesWindow: UIWindow {
                 self.shareImage(screenshot)
             }
         }
-        
+        configurationController.onPin = { [unowned self] enabled in
+            self.sizesViewController.pinsViewToTop = enabled
+            if enabled {
+                self.frame.origin.y = 0
+            } else {
+                self.center.y = UIScreen.main.bounds.midY
+            }
+        }
         panGesture = UIPanGestureRecognizer(target: self, action: #selector(dragged(_:)))
         configurationWindow.addGestureRecognizer(panGesture)
         panGesture.cancelsTouchesInView = false
@@ -75,6 +82,7 @@ open class SizesWindow: UIWindow {
 
     /// Manually present the configuration view
     public func presentConfiguration() {
+        configurationWindow.makeKeyAndVisible()
         let frame = configurationWindow.frame
         DispatchQueue.main.async { [unowned self] in
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.75, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
@@ -98,7 +106,12 @@ open class SizesWindow: UIWindow {
             let yMovement = shouldDismiss ? UIScreen.main.bounds.height : UIScreen.main.bounds.height - configurationWindow.frame.height
             UIView.animate(withDuration: 0.3, animations: {
                 self.configurationWindow.frame.origin.y = yMovement
-            }, completion: nil)
+            }, completion: { [unowned self] _ in
+                if shouldDismiss {
+                    self.configurationWindow.resignKey()
+                    self.makeKey()
+                }
+            })
         default: break
         }
     }
