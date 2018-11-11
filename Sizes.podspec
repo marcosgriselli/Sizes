@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Sizes'
-  s.version          = '0.4.1'
+  s.version          = '0.4.3'
   s.summary          = 'View your app on different device and font sizes.'
 
   s.description      = <<-DESC
