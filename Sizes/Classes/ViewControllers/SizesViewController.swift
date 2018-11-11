@@ -24,6 +24,8 @@ open class SizesViewController: UIViewController {
     /// Configuration controller to setup the desired layout
     private let configurationController = ConfigurationViewController()
     
+    private var currentLayout: Layout?
+    
     /// MARK: - Public API
     
     /// Scales the contained view when the device to layout is larger than the device than is currently running Sizes
@@ -52,6 +54,7 @@ open class SizesViewController: UIViewController {
         }
         
         let layout = LayoutFactory.layoutFor(device: device, orientation: orientation, contentSizeCategory: contentSize)
+        currentLayout = layout
         
         currentConstraints.forEach { $0.isActive = false }
         containedView.removeConstraints(currentConstraints)
@@ -77,9 +80,6 @@ open class SizesViewController: UIViewController {
         }
 
         sizesWindow.center = CGPoint(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.midY)
-        
-//        view.setNeedsLayout()
-//        view.layoutIfNeeded()
     }
     
     /// Contain the passed view controller to resize it and modify its traits
@@ -113,6 +113,14 @@ open class SizesViewController: UIViewController {
             containedView.heightAnchor.constraint(equalTo: view.heightAnchor)
         ]
         NSLayoutConstraint.activate(currentConstraints)
+    }
+    
+    internal func generateScreenshot() -> UIImage? {
+        guard let layout = currentLayout, let contained = containedController else {
+            print("📸 You are trying to take a screenshot of the default layout. We suggest you use the device screenshot functionality for that.")
+            return nil
+        }
+        return contained.view.asImage(traits: layout.traits)
     }
     
     /// Set the devices listed on the configuration view

@@ -105,6 +105,7 @@ internal class LayoutFactory: NSObject {
         let size = orientation == .portrait ? device.size : device.size.inverted
         traits.append(.init(userInterfaceIdiom: device.interfaceIdiom))
         traits.append(.init(preferredContentSizeCategory: category))
+        traits.append(.init(displayScale: device.deviceScale))
         return Layout(size: size, traits: .init(traitsFrom: traits))
     }
 }

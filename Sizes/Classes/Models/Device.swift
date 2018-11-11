@@ -82,6 +82,15 @@ public enum Device: CaseIterable {
         }
     }
     
+    internal var deviceScale: CGFloat {
+        switch self {
+        case .phone3_5inch, .phone4inch, .phone4_7inch, .pad, .pad12_9inch:
+            return 2.0
+            case .phone5_5inch, .phone5_8inch, .phone6_5inch:
+            return 3.0
+        }
+    }
+    
     /// MARK: - Public
     
     /// Filteres all the posibe devices and returns the ones that match the idiom input

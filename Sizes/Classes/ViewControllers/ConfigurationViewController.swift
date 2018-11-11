@@ -14,11 +14,11 @@ internal class ConfigurationViewController: UIViewController {
     @IBOutlet weak var orientationStackView: UIStackView!
     @IBOutlet weak var deviceStackView: UIStackView!
     @IBOutlet weak var textSizeLabel: UILabel!
-    @IBOutlet var panGesture: UIPanGestureRecognizer!
+    @IBOutlet weak var contentCategorySlider: UISlider!
     
     /// TODO: - Set default correctly.
     /// Selected orientation for layout
-    private var selectedOrientation: Orientation = .portrait {
+    private var selectedOrientation: Orientation = Orientation(current: UIApplication.shared.statusBarOrientation) {
         didSet {
             update?(selectedOrientation, selectedDevice, selectedTextSize)
         }
@@ -32,7 +32,7 @@ internal class ConfigurationViewController: UIViewController {
     }
     
     /// Selected content size for layout
-    private var selectedTextSize: UIContentSizeCategory = .large {
+    private var selectedTextSize: UIContentSizeCategory = UIApplication.shared.preferredContentSizeCategory {
         didSet {
             update?(selectedOrientation, selectedDevice, selectedTextSize)
         }
@@ -47,10 +47,13 @@ internal class ConfigurationViewController: UIViewController {
     }
     
     /// Available content size categories
-    let textSizes: [UIContentSizeCategory] = [.extraSmall, .small, .medium, .large, .extraLarge, .extraExtraLarge, .extraExtraExtraLarge, .accessibilityMedium, .accessibilityLarge, .accessibilityExtraLarge]
+    let textSizes: [UIContentSizeCategory] = [.extraSmall, .small, .medium, .large, .extraLarge, .extraExtraLarge, .extraExtraExtraLarge, .accessibilityMedium, .accessibilityLarge, .accessibilityExtraLarge, .accessibilityExtraExtraLarge, .accessibilityExtraExtraExtraLarge]
     
     /// Update layout closure
     var update: ((Orientation, Device, UIContentSizeCategory) -> Void)?
+    
+    /// On screenshot tap closure
+    var onScreenshot: (() -> Void)?
     
     open override var shouldAutorotate: Bool {
         return true
@@ -84,6 +87,21 @@ internal class ConfigurationViewController: UIViewController {
         /// Setup
         orientationSection.isHidden = !UIApplication.shared.supportsPortraitAndLandscape
         set(devices: supportedDevices)
+        
+        /// Select correct buttons
+        // TODO: - Implement better approach
+        if let index = Orientation.allCases.firstIndex(of: selectedOrientation) {
+        select(button: orientationStackView.arrangedSubviews[index] as! Button, from: orientationStackView)
+        }
+        
+        if let index = Device.allCases.firstIndex(of: selectedDevice) {
+            select(button: deviceStackView.arrangedSubviews[index] as! Button, from: deviceStackView)
+        }
+        
+        if let index = textSizes.firstIndex(of: selectedTextSize) {
+            contentCategorySlider.value = Float(index)
+            updateText(contentCategorySlider)
+        }
     }
     
     /// Set the available devices on screen
@@ -122,6 +140,10 @@ internal class ConfigurationViewController: UIViewController {
         let textSize = textSizes[Int(sender.value)]
         textSizeLabel.text = textSize.rawValue
         selectedTextSize = textSize
+    }
+    
+    @IBAction func takeScreenshot(_ sender: Any) {
+        onScreenshot?()
     }
     
     private func select(button: Button, from stackView: UIStackView) {

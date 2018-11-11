@@ -48,6 +48,11 @@ open class SizesWindow: UIWindow {
         configurationController.update = { [unowned self] orientation, device, textSize in
             self.sizesViewController.debug(device: device, orientation: orientation, contentSize: textSize)
         }
+        configurationController.onScreenshot = { [unowned self] in
+            if let screenshot = self.sizesViewController.generateScreenshot() {
+                self.shareImage(screenshot)
+            }
+        }
         
         panGesture = UIPanGestureRecognizer(target: self, action: #selector(dragged(_:)))
         configurationWindow.addGestureRecognizer(panGesture)
@@ -96,6 +101,35 @@ open class SizesWindow: UIWindow {
             }, completion: nil)
         default: break
         }
+    }
+    
+    private func shareImage(_ image: UIImage) {
+        // set up activity view controller
+        let imageToShare = [image]
+        let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+
+        //If info.plist does not have declared that it supports adding to Photo Library, remove the share option
+        if Bundle.main.object(forInfoDictionaryKey: "NSPhotoLibraryAddUsageDescription") == nil {
+            print("📄 To enable save to Camera Roll add NSPhotoLibraryAddUsageDescription in your Info.plist")
+            activityViewController.excludedActivityTypes = [UIActivity.ActivityType.saveToCameraRoll]
+        }
+        
+        let containerController = UIViewController()
+        containerController.view.backgroundColor = .clear
+
+        activityViewController.popoverPresentationController?.sourceView = containerController.view // so that iPads won't crash
+
+        /// We create a fullscreen temporal window so the share UI is presented on it instead of on the resized one.
+        let shareWindow = UIWindow(frame: UIScreen.main.bounds)
+        shareWindow.backgroundColor = .clear
+        shareWindow.windowLevel = .alert
+        shareWindow.makeKeyAndVisible()
+        shareWindow.rootViewController = containerController
+        
+        activityViewController.completionWithItemsHandler = { _, _, _, _ in
+            shareWindow.removeFromSuperview()
+        }
+        containerController.present(activityViewController, animated: true)
     }
 }
 
