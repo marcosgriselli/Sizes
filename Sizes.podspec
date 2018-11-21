@@ -16,6 +16,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'Sizes/Classes/**/*'
+  s.source_files = 'Sizes/Classes/**/*.{h,m,swift}'
+  s.resources = ['Sizes/Classes/ViewControllers/ConfigurationViewController.xib']
   s.swift_version = '4.2'
 end
