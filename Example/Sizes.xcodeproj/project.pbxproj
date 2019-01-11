@@ -13,10 +13,11 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		607FACEC1AFB9204008FA782 /* WindowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* WindowTests.swift */; };
 		C98A470F60561190B231D996 /* Pods_Sizes_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CD9ED3AD462901E10F812A /* Pods_Sizes_Tests.framework */; };
 		FB03B9A22178C2D300A889FC /* PresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB03B9A12178C2D300A889FC /* PresentViewController.swift */; };
 		FB230DF4216947EA00CC1D82 /* Sizes_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB230DF3216947EA00CC1D82 /* Sizes_ExampleUITests.swift */; };
+		FB8D84E121E946A400AEDEBA /* OtherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8D84E021E946A400AEDEBA /* OtherTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +50,7 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Sizes_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sizes_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		607FACEB1AFB9204008FA782 /* WindowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowTests.swift; sourceTree = "<group>"; };
 		8786D401DA1886B7F4D9628E /* Pods_Sizes_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sizes_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C99B0365BE78C15D0625BE1 /* Pods-Sizes_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sizes_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sizes_Example/Pods-Sizes_Example.release.xcconfig"; sourceTree = "<group>"; };
 		941193A275D5B9EA8A76D88C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -60,6 +61,7 @@
 		FB230DF1216947EA00CC1D82 /* Sizes_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sizes_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB230DF3216947EA00CC1D82 /* Sizes_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes_ExampleUITests.swift; sourceTree = "<group>"; };
 		FB230DF5216947EA00CC1D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB8D84E021E946A400AEDEBA /* OtherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +151,8 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				607FACEB1AFB9204008FA782 /* WindowTests.swift */,
+				FB8D84E021E946A400AEDEBA /* OtherTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -399,7 +402,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				FB8D84E121E946A400AEDEBA /* OtherTests.swift in Sources */,
+				607FACEC1AFB9204008FA782 /* WindowTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

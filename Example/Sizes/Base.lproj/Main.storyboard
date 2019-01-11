@@ -59,6 +59,9 @@
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4My-PX-Q7X">
                                                 <rect key="frame" x="20" y="159.33333333333331" width="335" height="44"/>
                                                 <color key="backgroundColor" red="0.56422978639999999" green="0.077530883250000002" blue="0.99607580900000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="present-button">
+                                                    <bool key="isElement" value="YES"/>
+                                                </accessibility>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="K4c-IM-LIv"/>
                                                 </constraints>
@@ -102,6 +105,9 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <accessibility key="accessibilityConfiguration" identifier="content-view">
+                            <bool key="isElement" value="NO"/>
+                        </accessibility>
                         <constraints>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="nCp-lO-609" secondAttribute="bottom" id="CP9-ZX-Bps"/>
                             <constraint firstAttribute="trailing" secondItem="nCp-lO-609" secondAttribute="trailing" id="IRh-Yl-bqP"/>
@@ -131,6 +137,7 @@
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmT-L3-SCd">
                                 <rect key="frame" x="47" y="384" width="281" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="dismiss-button"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="5vS-QO-6O8"/>
                                 </constraints>
