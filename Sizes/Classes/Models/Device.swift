@@ -51,7 +51,7 @@ public enum Device: CaseIterable {
     }
     
     /// InterfaceIdiom to filter between iPhones and iPads
-    internal var interfaceIdiom: UIUserInterfaceIdiom {
+    public var interfaceIdiom: UIUserInterfaceIdiom {
         switch self {
         case .phone3_5inch, .phone4inch, .phone4_7inch, .phone5_5inch, .phone5_8inch, .phone6_5inch:
             return .phone
