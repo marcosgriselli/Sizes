@@ -16,6 +16,10 @@ Sizes reduces the time it takes to evaluate all of our apps possible device size
 
 *Recorded on an 10.5 inch iPad Pro*
 
+[<img src="./Assets/pointFree_banner.png"/>](https://www.pointfree.co)
+
+Sizes was created as a port of [Brandon Williams](https://twitter.com/mbrandonw) and [Stephen Celis](https://twitter.com/stephencelis) in Playgrounds for the [Kickstarter iOS app](https://github.com/kickstarter/ios-oss) and further explained in [PointFree](https://www.pointfree.co) to iOS. Make sure to check their site out! 
+
 ## 🌟 Features
 
 - [x] Inspect your app in multiple device sizes
