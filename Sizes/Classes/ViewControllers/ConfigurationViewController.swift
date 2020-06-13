@@ -155,7 +155,7 @@ internal class ConfigurationViewController: UIViewController {
     
     @IBAction func deviceSelected(_ sender: Button) {
         select(button: sender, from: deviceStackView)
-        guard let index = deviceStackView.arrangedSubviews.index(of: sender) else {
+        guard let index = deviceStackView.arrangedSubviews.firstIndex(of: sender) else {
             return
         }
         selectedDevice = supportedDevices[index]

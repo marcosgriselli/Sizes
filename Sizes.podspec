@@ -18,5 +18,6 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Sizes/Classes/**/*.{h,m,swift}'
   s.resources = ['Sizes/Classes/ViewControllers/ConfigurationViewController.xib']
-  s.swift_version = '4.2'
+  s.swift_version = '5.2'
+  s.swift_versions = ['4.2', '5.0', '5.1']
 end

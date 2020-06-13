@@ -1,7 +1,7 @@
 <img width="100%" style="margin: 0 0 0 -20px" src="https://cdn.jsdelivr.net/gh/marcosgriselli/Sizes@92ced2ee616420c03911883df4d26649ab2317aa/Assets/sizes.svg"/>
 
 ![Version](https://img.shields.io/cocoapods/v/Sizes.svg)
-![Swift 4.1](https://img.shields.io/badge/Swift-4.2-orange.svg)
+![Swift 5.2](https://img.shields.io/badge/Swift-4.2-orange.svg)
 ![iOS 10.0+](https://img.shields.io/badge/Platforms-iOS-blue.svg?style=flat)
 ![Cartage](https://img.shields.io/badge/carthage-compatible-4BC51D.svg?style=flat)
 [![codecov](https://codecov.io/gh/marcosgriselli/Sizes/branch/master/graph/badge.svg)](https://codecov.io/gh/marcosgriselli/Sizes)
@@ -9,6 +9,12 @@
 ![License](https://img.shields.io/cocoapods/l/Sizes.svg?style=flat)
 
 Sizes reduces the time it takes to evaluate all of our apps possible device sizes, orientations and font combinations. With Sizes we'll avoid launching all the supported devices simulator, running our app and navigating through each screen manually which not only takes a lot of time but its also highly error prone since we sometimes forget to test one particular combination and we ship a screen with a layout bug to the App Store.
+
+## ⚠️ Sizes deprecation recommendation
+
+Xcode 11 introduced Previews which is a fantastic way to quickly validate your UI in multiple scenarios just like Sizes did. If you'd like to know more about Xcode Previews I recommend [this WWDC session](https://developer.apple.com/videos/play/wwdc2019/233/). You can even use [Previews with UIKit](https://nshipster.com/swiftui-previews/) so there's no reason to stick to this library.
+
+This library will be deprecated and the repo will be archived in the future.
 
 ## 📱 Sizes in action
 
