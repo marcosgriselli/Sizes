@@ -1,7 +1,7 @@
 <img width="100%" style="margin: 0 0 0 -20px" src="https://cdn.jsdelivr.net/gh/marcosgriselli/Sizes@92ced2ee616420c03911883df4d26649ab2317aa/Assets/sizes.svg"/>
 
 ![Version](https://img.shields.io/cocoapods/v/Sizes.svg)
-![Swift 5.2](https://img.shields.io/badge/Swift-4.2-orange.svg)
+![Swift 5.2](https://img.shields.io/badge/Swift-5.2-orange.svg)
 ![iOS 10.0+](https://img.shields.io/badge/Platforms-iOS-blue.svg?style=flat)
 ![Cartage](https://img.shields.io/badge/carthage-compatible-4BC51D.svg?style=flat)
 [![codecov](https://codecov.io/gh/marcosgriselli/Sizes/branch/master/graph/badge.svg)](https://codecov.io/gh/marcosgriselli/Sizes)
