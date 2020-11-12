@@ -1,5 +1,5 @@
 PODS:
-  - Sizes (0.2.1)
+  - Sizes (0.6.0)
 
 DEPENDENCIES:
   - Sizes (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Sizes: d98d89333f9e12783a26748f801a99e58a060634
+  Sizes: 23273ded20eb47b91b97ad626a02d61305bf22e1
 
 PODFILE CHECKSUM: 2defa75eff1446872b5053a96ea28b1613c80d3d
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.10.0

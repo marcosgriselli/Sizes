@@ -339,7 +339,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Sizes_Example/Pods-Sizes_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Sizes_Example/Pods-Sizes_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Sizes/Sizes.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -348,7 +348,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sizes_Example/Pods-Sizes_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sizes_Example/Pods-Sizes_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B55675BEE7CEC689245C0173 /* [CP] Check Pods Manifest.lock */ = {

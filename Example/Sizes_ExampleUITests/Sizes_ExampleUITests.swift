@@ -72,7 +72,7 @@ class Sizes_ExampleUITests: XCTestCase {
         elementsQuery.buttons["iPhone 5s"].tap()
         app.buttons["screenshot"].tap()
         //        app.sheets.buttons["Save Image"].tap()
-        app.buttons["Cancel"].tap()
+        app.buttons["Close"].tap()
     }
     
     func testControllerPresentationAndDismissal() {
