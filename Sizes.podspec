@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/marcosgriselli/Sizes.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/marcosgriselli'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '12.0'
 
   s.source_files = 'Sizes/Classes/**/*.{h,m,swift}'
   s.resources = ['Sizes/Classes/ViewControllers/ConfigurationViewController.xib']

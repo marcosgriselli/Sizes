@@ -511,9 +511,9 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		46A5F7718D285FB2EB28773EDC731583 /* Release */ = {
+		01DF9A6276DF4F70F8AAF340BEE7A8A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 056CB9CE66A24CA03E59254A08D68A75 /* Sizes.release.xcconfig */;
+			baseConfigurationReference = 54849F0BF1D55A77B0FFA99E28A577BD /* Sizes.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -527,7 +527,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Sizes/Sizes-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Sizes/Sizes-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Sizes/Sizes.modulemap";
 				PRODUCT_MODULE_NAME = Sizes;
@@ -537,11 +537,10 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		4C59B3B53EA611ABF86810EEAFBEB660 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -576,37 +575,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		73C5FEBA2AE0D7E618738146D5D64B4E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54849F0BF1D55A77B0FFA99E28A577BD /* Sizes.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Sizes/Sizes-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Sizes/Sizes-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Sizes/Sizes.modulemap";
-				PRODUCT_MODULE_NAME = Sizes;
-				PRODUCT_NAME = Sizes;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.1;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		7EE7A78859F657F6BEFC651185B43192 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -836,6 +804,38 @@
 			};
 			name = Debug;
 		};
+		DBD83AED56A78E146001E64F795FF8C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 056CB9CE66A24CA03E59254A08D68A75 /* Sizes.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Sizes/Sizes-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Sizes/Sizes-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Sizes/Sizes.modulemap";
+				PRODUCT_MODULE_NAME = Sizes;
+				PRODUCT_NAME = Sizes;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -869,8 +869,8 @@
 		CF1654F83C73798282BF29C12D485173 /* Build configuration list for PBXNativeTarget "Sizes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				73C5FEBA2AE0D7E618738146D5D64B4E /* Debug */,
-				46A5F7718D285FB2EB28773EDC731583 /* Release */,
+				01DF9A6276DF4F70F8AAF340BEE7A8A0 /* Debug */,
+				DBD83AED56A78E146001E64F795FF8C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

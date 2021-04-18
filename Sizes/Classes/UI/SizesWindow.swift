@@ -48,20 +48,12 @@ open class SizesWindow: UIWindow {
         
         super.init(frame: UIScreen.main.bounds)
         clipsToBounds = true
-        configurationController.update = { [unowned self] orientation, device, textSize in
-            self.sizesViewController.debug(device: device, orientation: orientation, contentSize: textSize)
+        configurationController.update = { [unowned self] orientation, device, textSize, interfaceStyle in
+            self.sizesViewController.debug(device: device, orientation: orientation, contentSize: textSize, interfaceStyle: interfaceStyle)
         }
         configurationController.onScreenshot = { [unowned self] in
             if let screenshot = self.sizesViewController.generateScreenshot() {
                 self.shareImage(screenshot)
-            }
-        }
-        configurationController.onPin = { [unowned self] enabled in
-            self.sizesViewController.pinsViewToTop = enabled
-            if enabled {
-                self.frame.origin.y = 0
-            } else {
-                self.center.y = UIScreen.main.bounds.midY
             }
         }
         configurationController.onLayout = { [weak self] in

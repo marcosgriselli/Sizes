@@ -15,7 +15,7 @@
   },
   "social_media_url": "https://twitter.com/marcosgriselli",
   "platforms": {
-    "ios": "10.0"
+    "ios": "12.0"
   },
   "source_files": "Sizes/Classes/**/*.{h,m,swift}",
   "resources": [

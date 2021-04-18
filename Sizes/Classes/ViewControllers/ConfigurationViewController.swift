@@ -14,6 +14,7 @@ internal class ConfigurationViewController: UIViewController {
     @IBOutlet weak var orientationSection: UIView!
     @IBOutlet weak var orientationStackView: UIStackView!
     @IBOutlet weak var deviceStackView: UIStackView!
+    @IBOutlet weak var appearanceStackView: UIStackView!
     @IBOutlet weak var textSizeLabel: UILabel!
     @IBOutlet weak var contentCategorySlider: UISlider!
     @IBOutlet weak var backgroundView: UIView!
@@ -23,21 +24,28 @@ internal class ConfigurationViewController: UIViewController {
     /// Selected orientation for layout
     private var selectedOrientation: Orientation = Orientation(current: UIApplication.shared.statusBarOrientation) {
         didSet {
-            update?(selectedOrientation, selectedDevice, selectedTextSize)
+            update?(selectedOrientation, selectedDevice, selectedTextSize, selectedUserInterfaceStyle)
         }
     }
     
     /// Selected device for layout
     private var selectedDevice = Device(size: UIScreen.main.bounds.size) ?? .phone4_7inch {
         didSet {
-            update?(selectedOrientation, selectedDevice, selectedTextSize)
+            update?(selectedOrientation, selectedDevice, selectedTextSize, selectedUserInterfaceStyle)
         }
     }
     
     /// Selected content size for layout
     private var selectedTextSize: UIContentSizeCategory = UIApplication.shared.preferredContentSizeCategory {
         didSet {
-            update?(selectedOrientation, selectedDevice, selectedTextSize)
+            update?(selectedOrientation, selectedDevice, selectedTextSize, selectedUserInterfaceStyle)
+        }
+    }
+
+    /// Selected user interface style
+    private var selectedUserInterfaceStyle: UIUserInterfaceStyle = .light {
+        didSet {
+            update?(selectedOrientation, selectedDevice, selectedTextSize, selectedUserInterfaceStyle)
         }
     }
     
@@ -53,7 +61,7 @@ internal class ConfigurationViewController: UIViewController {
     private let textSizes: [UIContentSizeCategory] = [.extraSmall, .small, .medium, .large, .extraLarge, .extraExtraLarge, .extraExtraExtraLarge, .accessibilityMedium, .accessibilityLarge, .accessibilityExtraLarge, .accessibilityExtraExtraLarge, .accessibilityExtraExtraExtraLarge]
     
     /// Update layout closure
-    internal var update: ((Orientation, Device, UIContentSizeCategory) -> Void)?
+    internal var update: ((Orientation, Device, UIContentSizeCategory, UIUserInterfaceStyle) -> Void)?
     
     /// On screenshot tap closure
     internal var onScreenshot: (() -> Void)?
@@ -167,17 +175,20 @@ internal class ConfigurationViewController: UIViewController {
         selectedTextSize = textSize
     }
     
+    @IBAction func lightAppearanceSelected(_ sender: Button) {
+        select(button: sender, from: appearanceStackView)
+        selectedUserInterfaceStyle = .light
+    }
+
+    @IBAction func darkAppearanceSelected(_ sender: Button) {
+        select(button: sender, from: appearanceStackView)
+        selectedUserInterfaceStyle = .dark
+    }
+
     @IBAction func takeScreenshot(_ sender: Any) {
         onScreenshot?()
     }
     
-    @IBAction func pinActionSelected(_ sender: Button) {
-        // TODO: - Create PIN functionality
-        sender.isSelected.toggle()
-        let style: Button.Style = sender.isSelected ? .selected : .normal
-        sender.set(style: style)
-        onPin?(sender.isSelected)
-    }
     private func select(button: Button, from stackView: UIStackView) {
         stackView.arrangedSubviews
             .compactMap { $0 as? Button }

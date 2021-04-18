@@ -25,9 +25,7 @@ open class SizesViewController: UIViewController {
     private let configurationController = ConfigurationViewController()
     
     private var currentLayout: Layout?
-    
-    internal var pinsViewToTop = false
-    
+
     /// MARK: - Public API
     
     /// Scales the contained view when the device to layout is larger than the device than is currently running Sizes
@@ -49,13 +47,14 @@ open class SizesViewController: UIViewController {
     ///   - contentSize: font size from UIContentSizeCategory
     internal func debug(device: Device,
                         orientation: Orientation,
-                        contentSize: UIContentSizeCategory) {
+                        contentSize: UIContentSizeCategory,
+                        interfaceStyle: UIUserInterfaceStyle) {
         guard let containedViewController = containedController, let sizesWindow = UIApplication.shared.windows.first(where:
             { $0 is SizesWindow }) else {
             return
         }
         
-        let layout = LayoutFactory.layoutFor(device: device, orientation: orientation, contentSizeCategory: contentSize)
+        let layout = LayoutFactory.layoutFor(device: device, orientation: orientation, contentSizeCategory: contentSize, interfaceStyle: interfaceStyle)
         currentLayout = layout
         
         currentConstraints.forEach { $0.isActive = false }
@@ -82,9 +81,6 @@ open class SizesViewController: UIViewController {
         }
 
         sizesWindow.center = CGPoint(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.midY)
-        if pinsViewToTop {
-            sizesWindow.frame.origin.y = 0
-        }
     }
     
     /// Contain the passed view controller to resize it and modify its traits

@@ -17,7 +17,7 @@ internal class LayoutFactory: NSObject {
     ///   - orientation: orientation to ajust the device size and traits
     ///   - category: font size UIContentSizeCategory
     /// - Returns: a Layout object 
-    internal static func layoutFor(device: Device, orientation: Orientation, contentSizeCategory category: UIContentSizeCategory) -> Layout {
+    internal static func layoutFor(device: Device, orientation: Orientation, contentSizeCategory category: UIContentSizeCategory, interfaceStyle: UIUserInterfaceStyle) -> Layout {
         var traits: [UITraitCollection]
         switch (device, orientation) {
         case (.phone3_5inch, .portrait):
@@ -106,6 +106,7 @@ internal class LayoutFactory: NSObject {
         traits.append(.init(userInterfaceIdiom: device.interfaceIdiom))
         traits.append(.init(preferredContentSizeCategory: category))
         traits.append(.init(displayScale: device.deviceScale))
+        traits.append(.init(userInterfaceStyle: interfaceStyle))
         return Layout(size: size, traits: .init(traitsFrom: traits))
     }
 }
